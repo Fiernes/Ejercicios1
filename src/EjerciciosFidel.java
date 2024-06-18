@@ -31,38 +31,35 @@ public class EjerciciosFidel {
         entrada.close();
     }
 
-    public void AreaCuadrado(){
-        float lado = 0;
+    public void Extremos(){
 
-        // Ciclo while para validar la entrada del lado
-        do {
-            System.out.print("Ingrese el lado del cuadrado: ");
-            if (!entrada.hasNextFloat()) {
-                System.out.println("Error: El valor ingresado no es un número válido.");
-                entrada.next(); // Limpiar el buffer de entrada
-            } else {
-                lado = entrada.nextFloat();
-                if (lado <= 0) {
-                    System.out.println("Error: El lado no puede ser menor o igual a 0.");
+        int numero, mayor = Integer.MIN_VALUE, menor = Integer.MAX_VALUE;
+        boolean continuar = false;
+
+        // Ciclo para leer 5 números enteros
+        for (int i = 1; i <= 5; i++) {
+
+            do{
+                System.out.print("Ingrese el número " + i + ": ");
+                if (!entrada.hasNextInt()){
+                    continuar = true;
+                    System.out.println("Error: Debe ingresar un número entero.");
+                    entrada.next(); // Limpiar entrada
+                }else{
+                    continuar = false;
+
                 }
-            }
-        } while (lado <= 0);
+            } while(continuar);
 
-        // Se calcula el área del cuadrado
-        float area = lado * lado;
+            numero = entrada.nextInt();
 
-        // Se calcula el perímetro del cuadrado
-        float perimetro = 4 * lado;
+            // Actualizar valores máximo y mínimo
+            mayor = Math.max(mayor, numero);
+            menor = Math.min(menor, numero);
+        }
 
-        // Se imprimen los resultados con las fórmulas utilizadas
-        System.out.println("\nÁrea:");
-        System.out.println("  A = lado²");
-        System.out.printf("  A = %.2f cm²\n", area);
-
-        System.out.println("\nPerímetro:");
-        System.out.println("  P = 4 * lado");
-        System.out.printf("  P = %.2f cm\n", perimetro);
-
-        entrada.close();
+        // Imprimir resultados
+        System.out.println("El número mayor es: " + mayor);
+        System.out.println("El número menor es: " + menor);
     }
 }
