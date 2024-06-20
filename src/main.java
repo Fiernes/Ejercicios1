@@ -4,7 +4,9 @@ public class main {
 
         EjerciciosFidel Fidel = new EjerciciosFidel();
         EjercicioCesar cesar = new EjercicioCesar();
+        cesar.OperacionesBasicas();
         cesar.SepararDigito();
         cesar.NumeroMayorMenu();
+
     }
 }

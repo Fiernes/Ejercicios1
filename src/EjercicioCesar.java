@@ -2,6 +2,43 @@ import java.util.Scanner;
 
 public class EjercicioCesar {
 
+    public void OperacionesBasicas(){
+        Scanner sc = new Scanner(System.in);
+
+        // Se declaran e inicializan las variables
+        double num1, num2;
+
+        // Se solicitan los dos números al usuario
+        System.out.print("Ingrese el primer número: ");
+        num1 = sc.nextDouble();
+        System.out.print("Ingrese el segundo número: ");
+        num2 = sc.nextDouble();
+
+        // Se realizan las operaciones
+        double suma = num1 + num2;
+        double resta = num1 - num2;
+        double producto = num1 * num2;
+        double cociente = 0;
+
+        // Verificar si el segundo número es diferente de cero antes de dividir
+        if (num2 != 0) {
+            cociente = num1 / num2;
+        } else {
+            System.out.println("Error: División por cero.");
+        }
+
+        // Se imprimen los resultados
+        System.out.println("La suma es: " + suma);
+        System.out.println("La resta es: " + resta);
+        System.out.println("El producto es: " + producto);
+        if (num2 != 0) {
+            System.out.println("El cociente es: " + cociente);
+        }
+
+        sc.close();
+    }
+
+
         public void SepararDigito(){
             // Crear un objeto Scanner para obtener la entrada del usuario
             Scanner scanner = new Scanner(System.in);
