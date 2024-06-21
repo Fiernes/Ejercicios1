@@ -27,10 +27,13 @@ public class EjerciciosFidel {
         String mensaje = (num1 > num2) ? num1 + " es más grande" : (num1 < num2) ? num2 + " es más grande" : "Estos números son iguales";
 
         System.out.println(mensaje);
-
-        entrada.close();
     }
 
+
+    /*
+    quiero que me generes un codigo en java con estas especificaciones:
+    Extremos: Escriba un programa que lea cinco enteros y que determine e imprima los enteros mayor y menor en el grupo
+    */
     public void Extremos(){
 
         int numero, mayor = Integer.MIN_VALUE, menor = Integer.MAX_VALUE;
