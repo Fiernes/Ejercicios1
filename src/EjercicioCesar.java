@@ -552,7 +552,33 @@ public class EjercicioCesar {
     }
 
    // ejercicio 82
+
+       public void Alineaésta(){
+           imprimirCuadrado(4, '#');
+       }
+       public static void imprimirCuadrado(int lado, char caracterRelleno) {
+           for (int i = 0; i < lado; i++) {
+               for (int j = 0; j < lado; j++) {
+                   System.out.print(caracterRelleno + " ");
+               }
+               System.out.println();
+           }
+       }
+
     //ejercicio88
+
+        public void coregir(){
+            imprimirerror(4, '#');
+        }
+        public void imprimirerror(int lado, char caracterRelleno) {
+            for (int i = 0; i < lado; i++) {
+                for (int j = 0; j < lado; j++) {
+                    System.out.print(caracterRelleno + " ");
+                }
+                System.out.print("^^@^^");
+            }
+        }
+
     // ejercicio 94
    public void Vectores() {
 
@@ -673,7 +699,7 @@ public class EjercicioCesar {
                     }
                     System.out.println();
                 }
-                System.out.println();
+                System.out.println(" = ");
             }
 
             public static int[][] calcularVentasTotales(int[][] ventasPorDia) {
@@ -704,7 +730,6 @@ public class EjercicioCesar {
                         ventasTotales[j][i] = ventasPorDia[i][j];
                     }
                 }
-
                 return ventasTotales;
             }
 
@@ -861,8 +886,6 @@ public class EjercicioCesar {
                     }
                     return dias;
                 }
-      // ejercicio 118
-
 }
 
 

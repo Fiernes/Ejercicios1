@@ -1,13 +1,14 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClinicaNutricion {
+
     private final int MAX_PACIENTES = 50;
-    private Paciente[] pacientes = new Paciente[MAX_PACIENTES];
     private int numPacientes = 0;
+    ArrayList<Paciente> listaPacientes = new ArrayList<>();
+    int opcion;
 
-    public ClinicaNutricion() {} // constructor
-
-    public void run() {
+    public void clinica() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -18,7 +19,16 @@ public class ClinicaNutricion {
             System.out.println("4. Estadísticas");
             System.out.println("5. Salir");
 
-            int opcion = scanner.nextInt();
+            do {
+                System.out.print("Ingrese una opcion: ");
+                if (scanner.hasNextInt()) {
+                    opcion = scanner.nextInt();
+                    break;
+                } else {
+                    System.out.println("ERROR DATO INGRESADO NO VALIDO");
+                    scanner.next(); // Limpiar el buffer de entrada
+                }
+            } while (true);
 
             switch (opcion) {
                 case 1:
@@ -46,35 +56,45 @@ public class ClinicaNutricion {
         if (numPacientes < MAX_PACIENTES) {
             Paciente paciente = new Paciente();
             System.out.print("Nombre: ");
-            paciente.nombre = scanner.next();
+            paciente.setNombre(scanner.next());
             System.out.print("Apellido: ");
-            paciente.apellido = scanner.next();
+            paciente.setApellido(scanner.next());
             System.out.print("Sexo (M/F): ");
-            paciente.sexo = scanner.next().charAt(0);
+            paciente.setSexo(scanner.next().charAt(0));
             System.out.print("Celular: ");
-            paciente.celular = scanner.next();
+            paciente.setCelular(scanner.nextInt());
             System.out.print("Peso (lb): ");
-            paciente.peso = scanner.nextDouble();
+            paciente.setPeso(scanner.nextDouble());
             System.out.print("Estatura (cm): ");
-            paciente.estatura = scanner.nextDouble();
+            paciente.setEstatura(scanner.nextDouble());
             System.out.print("IMC: ");
-            paciente.imc = scanner.nextDouble();
+            paciente.setImc(scanner.nextDouble());
             System.out.print("Diagnóstico: ");
-            paciente.diagnostico = scanner.next();
-
-            pacientes[numPacientes] = paciente;
-            numPacientes++;
-
+            paciente.setDiagnostico(scanner.next());
+            paciente.setExpediente(numPacientes);
+            listaPacientes.add(paciente); // Agregar paciente a la lista
+            numPacientes++; // Incrementar numPacientes
             System.out.println("Paciente agregado con éxito!");
         } else {
             System.out.println("No se pueden agregar más pacientes");
         }
     }
 
-    private void verPacientes() {
-        System.out.println("Pacientes:");
-        for (int i = 0; i < numPacientes; i++) {
-            System.out.println(pacientes[i].toString());
+    void verPacientes() {
+        if (listaPacientes.isEmpty()) {
+            System.out.println("No hay pacientes registrados");
+        } else {
+            System.out.println("Pacientes:");
+            for (int i = 0; i < numPacientes; i++) {
+                System.out.println("Nombre: " + listaPacientes.get(i).getNombre());
+                System.out.println("Apellido: " + listaPacientes.get(i).getApellido());
+                System.out.println("Sexo: " + listaPacientes.get(i).getSexo());
+                System.out.println("Celular: " + listaPacientes.get(i).getCelular());
+                System.out.println("Peso: " + listaPacientes.get(i).getPeso());
+                System.out.println("Estatura: " + listaPacientes.get(i).getEstatura());
+                System.out.println("IMC: " + listaPacientes.get(i).getImc());
+                System.out.println("Diagnóstico: " + listaPacientes.get(i).getDiagnostico());
+            }
         }
     }
 
@@ -83,13 +103,13 @@ public class ClinicaNutricion {
         int expediente = scanner.nextInt();
 
         for (int i = 0; i < numPacientes; i++) {
-            if (pacientes[i].expediente == expediente) {
+            if (listaPacientes.get(i).getExpediente() == expediente) {
                 System.out.print("Celular: ");
-                pacientes[i].celular = scanner.next();
+                listaPacientes.get(i).setCelular(scanner.nextInt());
                 System.out.print("Peso (lb): ");
-                pacientes[i].peso = scanner.nextDouble();
+                listaPacientes.get(i).setPeso(scanner.nextDouble());
                 System.out.print("Estatura (cm): ");
-                pacientes[i].estatura = scanner.nextDouble();
+                listaPacientes.get(i).setEstatura(scanner.nextDouble());
 
                 System.out.println("Paciente modificado con éxito!");
                 return;
@@ -106,13 +126,13 @@ public class ClinicaNutricion {
         int sobrepeso = 0;
 
         for (int i = 0; i < numPacientes; i++) {
-            if (pacientes[i].sexo == 'M') {
+            if (listaPacientes.get(i).getSexo() == 'M') {
                 hombres++;
             } else {
                 mujeres++;
             }
 
-            if (pacientes[i].imc < 25) {
+            if (listaPacientes.get(i).getImc() < 175) {
                 normopeso++;
             } else {
                 sobrepeso++;
@@ -127,40 +147,8 @@ public class ClinicaNutricion {
     }
 }
 
-class Paciente {
-    int expediente;
-    String nombre;
-    String apellido;
-    char sexo;
-    String celular;
-    double peso;
-    double estatura;
-    double imc;
-    String diagnostico;
 
-    public Paciente() {}
 
-    public Paciente(int expediente, String nombre, String apellido, char sexo, String celular, double peso, double estatura, double imc, String diagnostico) {
-        this.expediente = expediente;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.sexo = sexo;
-        this.celular = celular;
-        this.peso = peso;
-        this.estatura = estatura;
-        this.imc = imc;
-        this.diagnostico = diagnostico;
-    }
 
-    @Override
-    public String toString() {
-        return "Expediente: " + expediente + ", Nombre: " + nombre + ", Apellido: " + apellido + ", Sexo: " + sexo + ", Celular: " + celular + ", Peso: " + peso + ", Estatura: " + estatura + ", IMC: " + imc + ", Diagnóstico: " + diagnostico;
-    }
-}
 
-    class Main {
-    public static void main(String[] args) {
-        ClinicaNutricion clinica = new ClinicaNutricion();
-        clinica.run();
-    }
-}
+
