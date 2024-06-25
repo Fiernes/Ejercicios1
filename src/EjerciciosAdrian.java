@@ -3,14 +3,22 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
-
+/*
+Autor: Adrian Wasani Martinez Bonilla.
+* */
 public class EjerciciosAdrian {
 
+    /* Prompt-Ejercicio #1: Crea un encabezado para mis programas en JAVA que irá antes de los programas como comentario, el encabezado contendrá: nombre, apodo, correo electrónico, fecha, código correlativo
+    al ejercicio que estoy desarrollando y un espacio para escribir un análisis/resumen de mi ejercicio, también debe existir una versión corta de este encabezado para cuando trabaje con
+    otras personas. Para este caso este encabezado irá junto a un programa el cual mostrará como salida un saludo al usuario. El programa se llamará EjemploSello.
+    * */
     public void EjemploSaludo () {
 
         System.out.println("¡Hola, mundo!");
     }
 
+    /*Prompt-Ejercicio #2: Basado en el programa anterior ahora debe mostrar como salida el encabezado antes definido. El nombre del programa será "MostrandoSello".
+    * */
     public void MostrandoSello() {
         // Impresión del encabezado completo (incluyendo análisis/resumen)
         System.out.println("/**");
@@ -28,6 +36,8 @@ public class EjerciciosAdrian {
         System.out.println(" */");
     }
 
+    /*Prompt-Ejercicio #14: Crea un programa en JAVA llamado "TableroDamas" el cual muestra como salida un patrón de tablero de damas con sus ocho filas y columnas.
+    * */
     public void TableroDamas() {
 
         // Tamaño del tablero
@@ -52,6 +62,10 @@ public class EjerciciosAdrian {
         }
     }
 
+    /*Prompt-Ejercicio #20: Crea un programa en JAVA que calculará el pago a los vendedores de una empresa. Para ello se parte del sueldo base para cada empleado que es de $200 por
+    semana además de una comisión equivalente al 9% de las ventas brutas durante la semana. El programa mediante un ciclo while recibirá como entrada el total de ventas brutas de cada
+    vendedor, luego del cálculo debe mostrar como salida el sueldo total de ese vendedor.
+    * */
     public void CalculadoraSueldoVendedor() {
         Scanner sc = new Scanner(System.in);
 
@@ -84,6 +98,10 @@ public class EjerciciosAdrian {
         sc.close();
     }
 
+    /*Prompt-Ejercicio #26: Crea un programa en JAVA que se llamará "CopiarPegar" el cual utiliza una instrucción while y la secuencia de escape de tabulación \t para imprimir una tabla 
+    que contiene cuatro columnas y cinco filas en donde las columnas irán del siguiente orden: N, 10*N, 100*N y 1000*N, donde "N" son los números del 1 al 5 mostrados en cada fila en función
+     de lo que cada columna, por ejemplo, en la primera columna que es N los valores se muestran de esta manera: 1, 2, 3, 4, 5.
+    * */
     public void CopiarPegar() {
         // Encabezado de la tabla
         System.out.println("N\t10*N\t100*N\t1000*N");
@@ -97,6 +115,9 @@ public class EjerciciosAdrian {
         }
     }
 
+    /*Prompt-Ejercicio #32: Crea un programa en JAVA llamado "Factorial" El programa consiste en utilizar una función for para evaluar las factoriales enteras del 1 al 5 basado
+    en la siguiente fórmula: n! = n · (n – 1) · (n – 2) · ... · 1 (para valores de n mayores o iguales a 1), los resultados los debe mostrar en formato de tabulación.
+    * */
     public void Factorial() {
         // Ciclo for para calcular factoriales del 1 al 5
         for (int n = 1; n <= 5; n++) {
@@ -112,6 +133,9 @@ public class EjerciciosAdrian {
         }
     }
 
+    /*Prompt-Ejercicio #38: Crea un programa en JAVA llamado "Rombo" que imprima la figura de un rombo utilizando instrucciones de salida que impriman asteriscos o un solo espacio en blanco.
+    Maximiza el uso de la repetición con instrucciones for anidadas y minimiza el número de instrucciones de salida.
+    * */
     public void Rombo() {
         int altura = 5; // Ajusta la altura del rombo aquí
 
@@ -138,7 +162,12 @@ public class EjerciciosAdrian {
         }
     }
 
-
+     /*Prompt-Ejercicio #44: Crea un programa en JAVA, MenuProgram: este programa muestra un menú llamando a una función que presenta cinco opciones al usuario y devuelve la opción elegida, las opciones del menú principal
+     serán las siguientes enumeradas en este orden: 1. África, 2. América. 3. Asia, 4. Europa y la opción 5 será para salir del programa, al seleccionar la opción 1 (África) debe mostrar: 1. Nigeria y 2. Seychelles. En la
+     opción 2 (América) debe mostrar: 1. Estados Unidos y 2. Guyana. En la opción 3 (Asia) debe mostrar: 1. India y 2. Tuvalu. En la opción 4 (Europa) debe mostrar: 1. Alemania y 2. Luxemburgo. Todas las opciones antes mostradas
+     deben tener una tercera opción para regresar al menú principal y al seleccionar las otras opciones solo debe mostrar que se seleccionó dicha opción, también es necesario validar la entrada de opciones validas al usuario y no
+      se puede mostrar o validar nada desde el main, todo debe hacerse desde la función.
+     * */
     public void MenuProgram () {
         Scanner scanner = new Scanner(System.in);
         int option;
@@ -274,7 +303,9 @@ public class EjerciciosAdrian {
         }
     }
 
-
+    /*Prompt-Ejercicio #56: Crea un programa en JAVA, AlineaNombre: que utilice una función getline con las líbrerias string e iostream, mediante un ciclo solicite al usuario ingrese cinco nombres formados por el primer
+     nombre y primer apellido y lo imprima en pantalla alineado a la izquierda. No utilizar arreglos e importante la validación de las entradas.
+    * */
     public void AlineaNombre(String[] args) {
         Scanner sc = new Scanner(System.in);
         String nombreCompleto;
@@ -302,7 +333,9 @@ public class EjerciciosAdrian {
     }
 
 
-
+    /*Prompt-Ejercicio #62: Crea un programa en JAVA, DisminuyeNum: que reciba tres números de tipo double y que los pase a una función que duelva el mismo número más pequeño.
+    Importante la validación de entrada para cada número
+    * */
     public void DisminuyeNum(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -357,7 +390,11 @@ public class EjerciciosAdrian {
         return menor;
     }
 
-
+    /*Prompt-Ejercicio #68: Crea un programa en JAVA que consiste en lo siguiente: el programa debe servir de ayuda para un estudiante de escuela primaria, para que aprenda a multiplicar.
+    Use la función rand para producir dos enteros positivos de un dígito. El programa debe entonces mostrar una pregunta al usuario, como: ¿Cuánto es 6 por 7? El estudiante entonces debe
+    escribir la respuesta. Luego, el programa debe veriﬁcar la respuesta del estudiante. ¡Si es correcta, debe imprimir "Muy bien!" y hacer otra pregunta de multiplicación. Si la respuesta
+    es incorrecta, debe imprimir "No. Por favor intenta de nuevo." y deje que el estudiante intente la misma pregunta varias veces, hasta que esté correcta.
+    * */
 
     public void MultiplicacionPrimaria() {
         // Generador de números aleatorios
@@ -396,7 +433,10 @@ public class EjerciciosAdrian {
     }
 
 
-
+    /*Prompt-Ejercicio #74: Crea un programa en JAVA, Elevation que consiste en:  hacer un programa que involucre dos funciones para elevar al cuadrado y para elevar al cubo sin embargo estas funciones tienen que llevar el mismo nombre la única diferencia en cada par es que una hace uso de paso de parámetros por valor y la otra lo hace por referencia.
+    El programa tendrá dos funciones llamadas elevarCd (para elevar al cuadrado)y elevarCb (para elevar al cubo) entonces, al arrancar y luego de dar la bienvenida al usuario presentará una tabla con cinco columnas en la primera aparecerán los números del cero (0) al diez (10), en la segunda el cuadrado de estos números obtenidos por valor, en la tercera
+    el cuadrado obtenido por referencia, en la cuarta el cubo obtenido por valor y en la última el cubo obtenido por referencia.
+    * */
     public void Elevation() {
         // Bienvenida al usuario
         System.out.println("¡Bienvenido al programa Elevation!");
@@ -447,7 +487,9 @@ public class EjerciciosAdrian {
     }
 
 
-
+    /*Prompt-Ejercicio #86: Crea un programa en JAVA, ImpArchivo: que escriba un mensaje, escrito por el usuario, en un archivo de texto para ello se debe pedir al usuario
+    el mensaje. Algo importante a considerar es la validación para el ingreso del nombre de archivo, que sea de la manera que lo exige el programa.
+    * */
     public void ImpArchivo() {
         Scanner scanner = new Scanner(System.in);
 
@@ -477,7 +519,9 @@ public class EjerciciosAdrian {
     }
 
 
-
+    /*Prompt-Ejercicio #98: Crea un programa en JAVA, MatrizV2:Que haga una matriz de 5x5 con números aleatorios (menores a 100) y muestre el total de números pares en las filas en una columna extra y en una fila adicional
+    el total de números impares de cada columna.
+    * */
     public void MatrizV2() {
         int[][] matriz = new int[5][5];
         Random aleatorio = new Random();
@@ -536,7 +580,14 @@ public class EjerciciosAdrian {
     }
 
 
-
+    /*Prompt-Ejercicio #104: Crea un programa en JAVA, MatrizSentido que hará lo siguiente: Use un arreglo bidimensional para resolver el siguiente problema: una compañía tiene cuatro vendedores (1 a 4) que
+    venden cinco productos distintos (1 a 5). Una vez al día, cada vendedor pasa una nota por cada tipo de producto vendido. Cada nota contiene lo siguiente: El número del vendedor, el número del producto y
+    el valor total en dólares de ese producto vendido en ese día. Así, cada vendedor pasa entre 0 y 5 notas de venta por día. Suponga que está disponible la información sobre todas las notas del mes pasado.
+    Escriba un programa que lea toda esta información para las ventas del último mes y que resuma las ventas totales por vendedor, por producto. Todos los totales deben guardarse en el arreglo bidimensional
+    ventas. Después de procesar toda la información del mes pasado, muestre los resultados en formato tabular, donde cada columna representa a un vendedor específico y cada ﬁla represente a un producto. Saque
+    el total de cada ﬁla para obtener las ventas totales de cada producto durante el último mes. Saque el total de cada columna para obtener las ventas totales de cada producto durante el último mes. Su impresión
+    tabular debe incluir estos totales cruzados a la derecha de las ﬁlas totalizadas, y en la parte inferior de las columnas totalizadas. 
+    * */
     public void MatrizSentido() {
         // Declaración del arreglo bidimensional ventas
         int[][] ventas = new int[5][4]; // 5 filas (productos) y 4 columnas (vendedores)
@@ -613,6 +664,9 @@ public class EjerciciosAdrian {
     }
 
 
+    /*Prompt-Ejercicio #110: Crea un programa en JAVA, PhdMatriz que consiste en: Pedir al usuario que ingrese un número mayor a 2 y menor a 15, con ese número crear una matriz cuadrada y llenarla con números
+    positivos (generados con una función) entonces una vez llena la matriz mostrarla (usando una función para eso) e inmediatamente después mostrar su transpuesta (con otra función).
+    * */
     public void PhdMatriz() {
         Scanner sc = new Scanner(System.in);
         Random aleatorio = new Random();
