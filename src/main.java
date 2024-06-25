@@ -13,6 +13,11 @@ public class main {
         //Fidel.calcularPromedio();
         //Fidel.imprimirTablaConversiones();
         //Fidel.imprimirTablaMultiplicacion(entrada);
-        Fidel.divideYSuma(entrada);
+        //Fidel.divideYSuma(entrada);
+        //Fidel.HaceFrio(entrada);
+        //Fidel.Alineado(entrada);
+        //Fidel.Estacionamiento(entrada);
+        //Fidel.TorreHanoi(entrada);
+        //Fidel.Potenciando(entrada);
     }
 }

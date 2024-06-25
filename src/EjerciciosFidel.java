@@ -1,5 +1,7 @@
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class EjerciciosFidel {
 
@@ -321,7 +323,7 @@ public class EjerciciosFidel {
     public void divideYSuma(Scanner scanner) {
         // 1. Leer el número del Scanner
         int numero;
-        do{
+        do {
             System.out.println("Ingrese un numero entre 0 y 99999");
 
             while (!scanner.hasNextInt()) {
@@ -333,10 +335,10 @@ public class EjerciciosFidel {
             // 2. Validar que el número tenga como máximo 5 dígitos
             if (numero < 0 || numero > 99999) {
                 System.out.println("Error: El número debe estar entre 0 y 99999.");
-            }else{
+            } else {
                 break;
             }
-        }while(true);
+        } while (true);
 
 
         // 3. Separar los dígitos del número en un array
@@ -370,5 +372,305 @@ public class EjerciciosFidel {
         System.out.println(cadenaSalida);
     }
 
+/*
+53. me ayuda a crear un programa en java con las siguientes especificaciones y me das el codigo completo:
+¿Hace frío?: Vamos a desarrollar un convertidor de temperaturas para ello se presenta un menú donde indicamos
+la escala de temperatura inicial, luego se pide la escala de temperatura final y, finalmente se lee la temperatura en
+la escala inicial. El sistema debe entonces mostrar la temperatura inicial y la temperatura final cada una en su correspondiente escala.
+Se debe programar una función que reciba temperatura inicial, escala inicial, escala final y regrese el valor de
+la temperatura en la escala final obviamente el sistema no debe permitir al usuario elegir por escala final
+la misma escala inicial (ni siquier debe mostrarla como opción de escala final)
+PD: Las escalas de temperatura son Celsius, Fahrenheit y Kelvin
+*/
+
+    public void HaceFrio(Scanner entrada) {
+        // Menú de escala inicial
+        System.out.println("Seleccione la escala inicial:");
+        System.out.println("1. Celsius");
+        System.out.println("2. Fahrenheit");
+        System.out.println("3. Kelvin");
+        int escalaInicial = entrada.nextInt();
+
+        // Validación de escala inicial
+        while (escalaInicial < 1 || escalaInicial > 3) {
+            System.out.println("Opción inválida. Ingrese nuevamente:");
+            escalaInicial = entrada.nextInt();
+        }
+
+        // Menú de escala final
+        System.out.println("\nSeleccione la escala final (diferente a la inicial):");
+        System.out.println("1. Celsius");
+        System.out.println("2. Fahrenheit");
+        System.out.println("3. Kelvin");
+        int escalaFinal = entrada.nextInt();
+
+        // Validación de escala final
+        while (escalaFinal == escalaInicial) {
+            System.out.println("La escala final no puede ser la misma que la inicial. Ingrese nuevamente:");
+            escalaFinal = entrada.nextInt();
+        }
+
+        // Ingreso de temperatura inicial
+        System.out.println("\nIngrese la temperatura en la escala inicial:");
+        double temperaturaInicial = entrada.nextDouble();
+
+        // Conversión de temperatura
+        double temperaturaFinal = convertirTemperatura(temperaturaInicial, escalaInicial, escalaFinal);
+
+        // Impresión del resultado
+        System.out.println("\nTemperatura inicial: " + temperaturaInicial + "°");
+        System.out.println("Temperatura final: " + temperaturaFinal + "°");
+    }
+
+    private static double convertirTemperatura(double temperaturaInicial, int escalaInicial, int escalaFinal) {
+        switch (escalaInicial) {
+            case 1: // Celsius
+                switch (escalaFinal) {
+                    case 2: // Fahrenheit
+                        return (temperaturaInicial * 9 / 5) + 32;
+                    case 3: // Kelvin
+                        return temperaturaInicial + 273.15;
+                    default:
+                        return temperaturaInicial;
+                }
+            case 2: // Fahrenheit
+                switch (escalaFinal) {
+                    case 1: // Celsius
+                        return (temperaturaInicial - 32) * 5 / 9;
+                    case 3: // Kelvin
+                        return (temperaturaInicial - 32) * 5 / 9 + 273.15;
+                    default:
+                        return temperaturaInicial;
+                }
+            case 3: // Kelvin
+                switch (escalaFinal) {
+                    case 1: // Celsius
+                        return temperaturaInicial - 273.15;
+                    case 2: // Fahrenheit
+                        return (temperaturaInicial - 273.15) * 9 / 5 + 32;
+                    default:
+                        return temperaturaInicial;
+                }
+        }
+        // This line shouldn't be reached because all valid cases are handled above
+        return temperaturaInicial;
+    }
+
+
+    /*
+    59. me ayudas con el codigo completo en java de este programa:
+    Alineado: Escriba una función que solicite al usuario el valor del cuadrado y que verifique que solo se
+    puedan ingresar numeros enteros y que muestre en el margen izquierdo de la pantalla un cuadrado relleno de
+    asteriscos, cuyo lado se especiﬁque en el parámetro entero lado. Por ejemplo, si lado es 4, el método debe mostrar lo siguiente.
+    */
+    public void Alineado(Scanner entrada) {
+        int lado;
+
+        do {
+            System.out.print("Ingrese el lado del cuadrado (numero entero): ");
+
+            try {
+                lado = entrada.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingrese un valor numerico entero.");
+                entrada.next(); // Limpiar la entrada incorrecta
+                lado = -1; // Para que el bucle continue
+            }
+        } while (lado <= 0);
+
+        dibujarCuadrado(lado);
+    }
+
+    private static void dibujarCuadrado(int lado) {
+        int medio, impar;
+
+        if (lado % 2 == 0) {
+            medio = lado / 2;
+        } else {
+            impar = lado + 1;
+            medio = impar / 2;
+        }
+        for (int fila = 1; fila <= lado; fila++) {
+            for (int columna = 1; columna <= lado; columna++) {
+
+                if (fila == medio && columna == lado) {
+                    System.out.print("* (Lado = " + lado + ")"); // Imprimir el valor dentro del cuadrado
+                } else {
+                    System.out.print("*  ");
+                }
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < lado; i++) {
+            if (i == medio - 1) {
+                System.out.print("(Lado = " + lado + ")");
+            } else {
+                System.out.print("   ");
+            }
+        }
+    }
+
+
+/*
+65. quiero hacer este programa en java:
+Aparcar si puedes: Un estacionamiento cobra una cuota mínima de $2.00 por estacionarse hasta tres horas.
+El estacionamiento cobra $0.50 adicionales por cada hora o fracción que se pase de tres horas. El cargo máximo para
+cualquier periodo dado de 24 horas es de $10.00. Suponga que ningún auto se estaciona durante más de 24 horas a la vez.
+Escriba un programa que calcule y muestre los cargos por estacionamiento para cada uno de tres clientes que estacionaron su auto
+ayer en este estacionamiento. Debe introducir las horas de estacionamiento para cada cliente. El programa debe imprimir los
+resultados en un formato tabular ordenado, debe calcular e imprimir el total de los recibos de ayer. El programa debe utilizar la
+función calcularCargos para determinar el cargo para cada cliente.
+me das el codigo completo.
+*/
+
+    public void Estacionamiento(Scanner entrada) {
+
+        // Se declaran las variables necesarias
+        double totalRecibos = 0.0;
+        int horasCliente;
+
+        // Se procesa la información de cada cliente
+        for (int cliente = 1; cliente <= 3; cliente++) {
+            System.out.print("Ingrese las horas estacionadas por el cliente " + cliente + ": ");
+            horasCliente = entrada.nextInt();
+
+            // Se calcula el cargo para el cliente actual
+            double cargoCliente = calcularCargo(horasCliente);
+
+            // Se actualiza el total de recibos
+            totalRecibos += cargoCliente;
+
+            // Se imprime la información del cliente actual
+            System.out.println("Cliente " + cliente + ": $" + cargoCliente);
+        }
+
+        // Se imprime el total de recibos
+        System.out.println("\nTotal de recibos: $" + totalRecibos);
+    }
+
+    public static double calcularCargo(int horasEstacionadas) {
+        double cargo = 2.0; // Cuota mínima
+
+        // Se calcula el cargo adicional por horas adicionales
+        if (horasEstacionadas > 3) {
+            int horasAdicionales = horasEstacionadas - 3;
+            cargo += horasAdicionales * 0.5;
+        }
+
+        // Se asegura que el cargo no exceda el máximo
+        if (cargo > 10.0) {
+            cargo = 10.0;
+        }
+
+        return cargo;
+    }
+
+
+    /*
+    71. sabes cual es este problema Hanoi: Busque el problema de las torres de hanoi y copie el código en JAVA, documente las líneas y haga una salida elegante.
+    */
+    public void TorreHanoi(Scanner entrada) {
+        int n; // Cantidad de discos
+        System.out.println("Cuandos discos desea");
+        n = entrada.nextInt(); //Se solicita al usuario elegir la cantidad de discos entre mayor el numero mayor el numero de movimientos
+        moverDiscos(n, 1, 3, 2); // Mover discos de la torre 1 a la 3 usando la 2 como auxiliar
+    }
+
+    public static void moverDiscos(int n, int origen, int destino, int auxiliar) {
+        if (n == 1) {
+            System.out.println("Mover disco 1 de " + origen + " a " + destino);
+            return;
+        }
+
+        moverDiscos(n - 1, origen, auxiliar, destino); // Mover n-1 discos a la torre auxiliar
+        System.out.println("Mover disco " + n + " de " + origen + " a " + destino);  // Mover disco n a destino
+        moverDiscos(n - 1, auxiliar, destino, origen); // Mover n-1 discos de la auxiliar a destino
+    }
+
+    /*
+
+77. como harias este programa en java:
+Potenciando: Vamos a crear un programa que compare nuestras capacidades con las de otros programadores para ello vamosa
+crear una función que permita elevar un número a cualquier potencia recuerde que
+a.Usted debe saber como calcular potencias.
+b.Un número elevado a un número negativo también tiene potencia.
+c.Todo número elevado a la cero es igual a 1 sin excepción.
+Una vez creada la función vamos a pedir al usuario que ingrese dos números con las siguientes restricciones:
+a.Ambos ángulos deben estar entre -50 y 50.
+b.El segundo número debe ser mayor que el primero si el usuario ingresa un número menor debe preguntarle si desea cambiar el segundo por el
+primero y dejar el primero por el segundo. Es decir si num1= 15 y num2 = -15 el sistema debe preguntar “¿Desea que el primer número sea -15 y
+el segundo 15 (1= si, 2 = volver a leer ambos números? : “ y bueno, actuar conforme lo que decida el usuario en cuanto a los valores de los números.
+Una vez leídos los números se pedirán tres exponentes (todos entre -10 y 10) y luego el programa debe mostrar la siguiente tabla:
+
+  Num
+ Potencia P1
+ pow(Num, P1)
+ Potencia P2
+ Pow(Num, P2)
+ Potencia P3
+ pow(Num, P3)
+
+  Donde Potencia P1, Potencia P2 y Potencia P3 son potencias obtenidas con la función que usted creó y Pow(Num, P1), Pow(Num, P2) y Pow(Num, P3) son
+   potencias obtenidas usando la función pow de la biblioteca math.h (en java de la clase math). Esta tabla debe satisfacer las siguientes características:
+a.La tabla debe estar correctamente construida con columnas de un ancho de 15.
+b.Deben usarse solamente tres cifras decimales en los resultados mostrados.
+c.La primera columna está formada por todos los números entre el primero y el segundo número incluyéndolos.
+    */
+
+    public void Potenciando(Scanner entrada) {
+
+        // Solicitar números al usuario
+        int num1, num2;
+        do {
+            System.out.print("Ingrese el primer número (-50 a 50): ");
+            num1 = entrada.nextInt();
+        } while (num1 < -50 || num1 > 50);
+
+        do {
+            System.out.print("Ingrese el segundo número (-50 a 50): ");
+            num2 = entrada.nextInt();
+        } while (num2 < -50 || num2 > 50 || num2 <= num1);
+
+        System.out.print("¿Desea que el primer número sea " + num2 + " y el segundo " + num1 + " (1=si, 2=no)? ");
+        int opcion = entrada.nextInt();
+        if (opcion == 1) {
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+
+        // Solicitar exponentes
+        int[] exponentes = new int[3];
+        for (int i = 0; i < exponentes.length; i++) {
+            do {
+                System.out.print("Ingrese el exponente " + (i + 1) + " (-10 a 10): ");
+                exponentes[i] = entrada.nextInt();
+            } while (exponentes[i] < -10 || exponentes[i] > 10);
+        }
+
+        // Generar y mostrar la tabla
+        System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s\n", "Num", "Potencia P1", "pow(Num, P1)", "Potencia P2", "pow(Num, P2)", "Potencia P3", "pow(Num, P3)");
+        for (int i = num1; i <= num2; i++) {
+            for (int j = 0; j < exponentes.length; j++) {
+                double potenciaCalculada = potencia(i, exponentes[j]);
+                double potenciaMath = Math.pow(i, exponentes[j]);
+                System.out.printf("%-15d%-15d%-15.3f%-15d%-15.3f%-15.3f\n", i, exponentes[j], potenciaCalculada, exponentes[j], potenciaMath, potenciaMath);
+            }
+        }
+    }
+
+    // Función para calcular potencias
+    double potencia (double base, int exponente){
+        if (exponente == 0) {
+            return 1;
+        } else if (exponente > 0) {
+            return base * potencia(base, exponente - 1);
+        } else {
+            return 1 / potencia(base, -exponente);
+        }
+    }
 
 }
+
+
+
