@@ -8,6 +8,7 @@ Autor: Adrian Wasani Martinez Bonilla.
 * */
 public class EjerciciosAdrian {
 
+
     /* Prompt-Ejercicio #1: Crea un encabezado para mis programas en JAVA que irá antes de los programas como comentario, el encabezado contendrá: nombre, apodo, correo electrónico, fecha, código correlativo
     al ejercicio que estoy desarrollando y un espacio para escribir un análisis/resumen de mi ejercicio, también debe existir una versión corta de este encabezado para cuando trabaje con
     otras personas. Para este caso este encabezado irá junto a un programa el cual mostrará como salida un saludo al usuario. El programa se llamará EjemploSello.
@@ -35,6 +36,7 @@ public class EjerciciosAdrian {
         System.out.println(" * Este programa muestra el encabezado completo del ejercicio.");
         System.out.println(" */");
     }
+
 
     /*Prompt-Ejercicio #14: Crea un programa en JAVA llamado "TableroDamas" el cual muestra como salida un patrón de tablero de damas con sus ocho filas y columnas.
     * */
@@ -66,7 +68,7 @@ public class EjerciciosAdrian {
     semana además de una comisión equivalente al 9% de las ventas brutas durante la semana. El programa mediante un ciclo while recibirá como entrada el total de ventas brutas de cada
     vendedor, luego del cálculo debe mostrar como salida el sueldo total de ese vendedor.
     * */
-    public void CalculadoraSueldoVendedor() {
+      public void CalculadoraSueldoVendedor() {
         Scanner sc = new Scanner(System.in);
 
         // Sueldo base por semana
@@ -306,7 +308,7 @@ public class EjerciciosAdrian {
     /*Prompt-Ejercicio #56: Crea un programa en JAVA, AlineaNombre: que utilice una función getline con las líbrerias string e iostream, mediante un ciclo solicite al usuario ingrese cinco nombres formados por el primer
      nombre y primer apellido y lo imprima en pantalla alineado a la izquierda. No utilizar arreglos e importante la validación de las entradas.
     * */
-    public void AlineaNombre(String[] args) {
+    public void AlineaNombre() {
         Scanner sc = new Scanner(System.in);
         String nombreCompleto;
 
@@ -336,7 +338,7 @@ public class EjerciciosAdrian {
     /*Prompt-Ejercicio #62: Crea un programa en JAVA, DisminuyeNum: que reciba tres números de tipo double y que los pase a una función que duelva el mismo número más pequeño.
     Importante la validación de entrada para cada número
     * */
-    public void DisminuyeNum(String[] args) {
+    public void DisminuyeNum() {
         Scanner sc = new Scanner(System.in);
 
         // Solicitar y validar el primer número
@@ -722,5 +724,7 @@ public class EjerciciosAdrian {
 
         return transpuesta;
     }
+
+
 
 }
