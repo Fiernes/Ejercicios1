@@ -37,6 +37,61 @@ public class EjerciciosAdrian {
         System.out.println(" */");
     }
 
+    /*
+    * Prompt-Ejercicio #8: Partiendo del código anterior quiero que me hagas un programa que reciba cuatro números enteros y los ordene de mayor a
+    * menor y los muestre ordenados ascendentemente de izquierda a derecha y luego que muestre su suma, promedio, producto, menor y mayor valor.
+    * */
+    public void OrdenarNumeros() {
+        Scanner sc = new Scanner(System.in);
+
+        // Se solicitan los cuatro números al usuario
+        System.out.print("Ingrese el primer número: ");
+        int num1 = sc.nextInt();
+        System.out.print("Ingrese el segundo número: ");
+        int num2 = sc.nextInt();
+        System.out.print("Ingrese el tercer número: ");
+        int num3 = sc.nextInt();
+        System.out.print("Ingrese el cuarto número: ");
+        int num4 = sc.nextInt();
+
+        // Se ordenan los números de mayor a menor utilizando un arreglo temporal
+        int[] numeros = {num1, num2, num3, num4};
+        int temp;
+        for (int i = 0; i < numeros.length; i++) {
+            for (int j = 0; j < numeros.length - i - 1; j++) {
+                if (numeros[j] < numeros[j + 1]) {
+                    temp = numeros[j];
+                    numeros[j] = numeros[j + 1];
+                    numeros[j + 1] = temp;
+                }
+            }
+        }
+
+        // Se muestran los números ordenados de menor a mayor
+        System.out.println("\nNúmeros ordenados de mayor a menor:");
+        for (int numero : numeros) {
+            System.out.print(numero + " ");
+        }
+
+        // Se calculan la suma, el promedio y el producto
+        int suma = 0;
+        for (int numero : numeros) {
+            suma += numero;
+        }
+        double promedio = (double) suma / numeros.length;
+        int producto = 1;
+        for (int numero : numeros) {
+            producto *= numero;
+        }
+
+        // Se muestran los resultados al usuario
+        System.out.println("\nSuma: " + suma);
+        System.out.println("Promedio: " + promedio);
+        System.out.println("Producto: " + producto);
+        System.out.println("Menor número: " + numeros[numeros.length - 1]);
+        System.out.println("Mayor número: " + numeros[0]);
+    }
+
 
     /*Prompt-Ejercicio #14: Crea un programa en JAVA llamado "TableroDamas" el cual muestra como salida un patrón de tablero de damas con sus ocho filas y columnas.
     * */
