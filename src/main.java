@@ -19,5 +19,9 @@ public class main {
         //Fidel.Estacionamiento(entrada);
         //Fidel.TorreHanoi(entrada);
         //Fidel.Potenciando(entrada);
+        //Fidel.InstrucciónAsistidaComputadora2(entrada);
+        //Fidel.TeLeoVerdad(entrada);
+        //Fidel.VectuEliges(entrada);
+        //Fidel.OrdenamientoOptimizado(entrada);
     }
 }

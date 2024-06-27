@@ -1,6 +1,4 @@
-import java.util.InputMismatchException;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 import java.math.BigDecimal;
 
 public class EjerciciosFidel {
@@ -670,6 +668,259 @@ c.La primera columna está formada por todos los números entre el primero y el 
         }
     }
 
+/*
+83. como hago esto: Modifique el programa del ejercicio “Instrucción asistida por computadora” para implementar una librería propia.
+en este codigo: public void InstruccionAsistida() { Scanner scanner = new Scanner(System.in); boolean continuar = true; while (continuar) {
+int correctas = 0; int incorrectas = 0; for (int i = 0; i < 10; i++) { System.out.print("Pregunta " + (i + 1) + ": ");
+String respuesta = scanner.next(); if (esCorrecta(respuesta)) { correctas++; } else { incorrectas++; } }
+double porcentajeCorrectas = calcularPorcentaje(correctas); System.out.println("Porcentaje de respuestas correctas: " + porcentajeCorrectas + "%");
+if (porcentajeCorrectas < 75) { System.out.println("Por favor pida ayuda adicional a su instructor."); continuar = false; } else {
+continuar = preguntarContinuar(scanner); } } scanner.close(); } public boolean esCorrecta(String respuesta) {
+Aquí implementas la lógica para determinar si la respuesta es correcta o no // Por ejemplo, compara la respuesta con una cadena que consideres correcta
+return respuesta.equalsIgnoreCase("si"); // Cambia esto por la lógica correcta } public double calcularPorcentaje(int correctas) { return (double) correctas / 10 * 100; }
+public boolean preguntarContinuar(Scanner scanner) { System.out.print("¿Desea continuar? (s/n): "); String respuesta = scanner.next(); return respuesta.equalsIgnoreCase("s"); }
+*/
+    public void InstrucciónAsistidaComputadora2(Scanner entrada){
+
+        InstruccionAsistidaLib lib = new InstruccionAsistidaLib(); // Crear una instancia de la librería
+        boolean continuar = true;
+
+        while (continuar) {
+            int correctas = 0;
+            int incorrectas = 0;
+
+            // Obtener las preguntas de la librería
+            Map<String, String[]> preguntas = lib.obtenerPreguntas();
+            int preguntaNumero = 1;
+
+            for (Map.Entry<String, String[]> entra : preguntas.entrySet()) {
+                System.out.print("Pregunta " + preguntaNumero + ": " + entra.getKey() + "\n");
+                System.out.println(entra.getValue()[0]);
+                System.out.println(entra.getValue()[1]);
+                System.out.print("Seleccione la opción correcta (1 o 2): ");
+                String respuesta = entrada.nextLine();
+
+                // Verificar si la respuesta es correcta
+                if (respuesta.equals("1")) {
+                    correctas++;
+                } else {
+                    incorrectas++;
+                }
+                preguntaNumero++;
+            }
+
+            double porcentajeCorrectas = lib.calcularPorcentaje(correctas); // Usar el método de la librería
+            System.out.println("Porcentaje de respuestas correctas: " + porcentajeCorrectas + "%");
+
+            if (porcentajeCorrectas < 75) {
+                System.out.println("Por favor pida ayuda adicional a su instructor.");
+                continuar = false;
+            } else {
+                continuar = lib.preguntarContinuar(entrada); // Usar el método de la librería
+            }
+        }
+    }
+
+/*
+89. me generas el codigo en java de esto:
+Te leo, de verdad: Hacer un programa que pida al usuario un número entero mayor que diez y menor que cien, luego leer
+tantos números como el que haya ingresado el usuario entonces muestre en una lista todos los números separados por coma
+(el último lleva punto después de él y la letra “y” en lugar de coma antes que él. Y pida al usuario cinco números (almacenados en un solo arreglo)
+esos números deben estar entre 0 y el primer número que se le pidió ingresar al usuario y, finalmente mostrar una tabla donde aparezcan estos
+cinco números en la primera columna y en la segunda el número de la lista de números en la posición de la primera columna. Así:
+*/
+    public void TeLeoVerdad(Scanner entrada) {
+
+        // Pedir al usuario un número entero mayor que diez y menor que cien
+        int numeroLimite;
+        do {
+            System.out.print("Ingrese un número entero mayor que diez y menor que cien: ");
+            numeroLimite = entrada.nextInt();
+        } while (numeroLimite <= 10 || numeroLimite >= 100);
+
+        // Leer tantos números como el que haya ingresado el usuario
+        int[] listaNumeros = new int[numeroLimite];
+        for (int i = 0; i < numeroLimite; i++) {
+            System.out.print("Ingrese el número " + (i + 1) + ": ");
+            listaNumeros[i] = entrada.nextInt();
+        }
+
+        // Mostrar la lista de números separados por coma
+        System.out.print("Lista de números: ");
+        for (int i = 0; i < numeroLimite - 1; i++) {
+            int n = numeroLimite - i;
+            if(n == 2){
+                System.out.println("Y " + listaNumeros[i]);
+            }else{
+                System.out.print(listaNumeros[i] + ", ");
+            }
+        }
+
+        // Pedir al usuario cinco números entre 0 y el primer número ingresado
+        int[] numerosComparacion = new int[5];
+        for (int i = 0; i < 5; i++) {
+            do {
+                System.out.print("Ingrese el número " + (i + 1) + " entre 0 y " + numeroLimite + ": ");
+                numerosComparacion[i] = entrada.nextInt();
+            } while (numerosComparacion[i] < 0 || numerosComparacion[i] >= numeroLimite);
+        }
+
+        // Mostrar la tabla con los números y su posición en la lista
+        System.out.println("\nTabla:");
+        System.out.printf("%-10s | %-20s\n", "Número", "Posición en la lista");
+        for (int numero : numerosComparacion) {
+            int posicion = buscarPosicion(listaNumeros, numero);
+            System.out.printf("%-10d | %-20d\n", numero, posicion);
+        }
+    }
+
+    // Método para buscar la posición de un número en la lista
+    private static int buscarPosicion(int[] lista, int numero) {
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] == numero) {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    /*
+    95. me ayuda a generar Vectueliges: Haga un programa que solicite a un usuario un número entre 10 y 100,
+    luego cree un vector con esa cantidad de números aleatorios, los presente tal como se crearon, los ordene y los
+    presente ordenados de mayor a menor. en java
+    */
+    public void VectuEliges(Scanner entrada){
+        Random random = new Random();
+
+        // Solicitar número al usuario
+        int numeroElementos;
+        do {
+            System.out.print("Ingrese un número entre 10 y 100: ");
+            numeroElementos = entrada.nextInt();
+        } while (numeroElementos < 10 || numeroElementos > 100);
+
+        // Crear vector y generar números aleatorios
+        int[] vector = new int[numeroElementos];
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = random.nextInt(101);
+        }
+
+        // Mostrar vector original
+        System.out.println("\nVector original:");
+        for (int elemento : vector) {
+            System.out.print(elemento + " ");
+        }
+
+        // Ordenar vector de mayor a menor
+        Arrays.sort(vector);
+
+        // Mostrar vector ordenado
+        System.out.println("\nVector ordenado de mayor a menor:");
+        for (int elemento : vector) {
+            System.out.print(elemento + " ");
+        }
+    }
+
+
+    /*
+    101. me haces esto:
+En lugar de realizar nueve comparaciones en cada pasada, modiﬁque el ordenamiento de burbuja para que realice ocho comparaciones en la
+segunda pasada, siete en la tercera, y así en lo sucesivo.
+Los datos en el arreglo tal vez se encuentren ya en el orden apropiado, o casi apropiado, así que ¿para qué realizar nueve pasadas,
+si basta con menos? Modiﬁque el ordenamiento para comprobar al ﬁnal de cada pasada si se han realizado intercambios. Si no se ha realizado ninguno,
+los datos ya deben estar en el orden apropiado, por lo que el programa debe terminar. Si se han realizado intercambios, por lo menos se necesita una
+pasada más. en este codigo:
+public void burbuja() {
+Scanner scanner = new Scanner(System.in);
+int[] arreglo = new int[10];
+System.out.println("Ingrese los 10 elementos del arreglo:");
+for (int i = 0; i < arreglo.length; i++) {
+arreglo[i] = scanner.nextInt();
+}
+ordenarArreglo(arreglo);
+System.out.println("Arreglo ordenado:");
+imprimirArreglo(arreglo);
+System.out.println("¿Desea continuar? (s/n)");
+String respuesta = scanner.next();
+if (respuesta.equalsIgnoreCase("s")) {
+} else {
+System.out.println("Adiós!");
+}
+}
+public void ordenarArreglo(int[] arreglo) {
+int n = arreglo.length;
+boolean swapped;
+do {
+swapped = false;
+for (int i = 0; i < n - 1; i++) {
+if (arreglo[i] > arreglo[i + 1]) {
+int temp = arreglo[i];
+arreglo[i] = arreglo[i + 1];
+arreglo[i + 1] = temp;
+swapped = true;
+}
+}
+n--;
+} while (swapped);
+}
+public void imprimirArreglo(int[] arreglo) {
+for (int i = 0; i < arreglo.length; i++) {
+System.out.print(arreglo[i] + " ");
+}
+System.out.println();
+}
+    */
+    public void OrdenamientoOptimizado(Scanner entrada){
+        Random random = new Random();
+        int DimensionArreglo;
+
+        System.out.println("Ingrese la dimension del arreglo:");
+        DimensionArreglo = entrada.nextInt();
+
+        int[] arreglo = new int[DimensionArreglo];
+        for (int i = 0; i < arreglo.length; i++) {
+            arreglo[i] = random.nextInt(101);
+            System.out.print(arreglo[i] + ", ");
+        }
+
+        ordenarArreglo(arreglo);
+
+        System.out.println(" ");
+        System.out.println("Arreglo ordenado:");
+        imprimirArreglo(arreglo);
+
+        System.out.println("¿Desea continuar? (s/n)");
+        String respuesta = entrada.next();
+        if (respuesta.equalsIgnoreCase("s")) {
+            // Continuar con otro arreglo
+        } else {
+            System.out.println("Adiós!");
+        }
+    }
+
+    public static void ordenarArreglo(int[] arreglo) {
+        int n = arreglo.length;
+        boolean swapped;
+        do {
+            swapped = false;
+            for (int i = 0; i < n - 1; i++) {
+                if (arreglo[i] > arreglo[i + 1]) {
+                    int temp = arreglo[i];
+                    arreglo[i] = arreglo[i + 1];
+                    arreglo[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            n--;
+        } while (swapped);
+    }
+
+    public static void imprimirArreglo(int[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + ", ");
+        }
+        System.out.println();
+    }
 }
 
 
