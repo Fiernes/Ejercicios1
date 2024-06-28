@@ -25,7 +25,6 @@ public class main {
         //Fidel.OrdenamientoOptimizado(entrada);
         //Fidel.Pollos(entrada);
         //Fidel.Grafos(entrada);
-        //Fidel.Clinica2();
 
     }
 }
