@@ -15,7 +15,7 @@ public class EjerciciosAbner {
     private static final String[] PISOS_CARDINALES = {"segundo", "tercero", "cuarto", "quinto", "sexto", "séptimo", "octavo", "noveno", "décimo", "onceavo", "doceavo", "treceavo"};
     // Matriz para representar el hospital
     private static final boolean[][][] habitation = new boolean[ESPECIALIDADES.length][3][10]; // [especialidad][piso][habitacion] (true = ocupada, false = libre)
-    private static final List<ExpedientePaciente> expedientes = new ArrayList<>();
+   
     private static final Scanner sc = new Scanner(System.in);
 
     // Function to display the menu and return the selected option
@@ -318,7 +318,7 @@ public class EjerciciosAbner {
     }
 
     // Menú principal
-    private static void mostrarMenu() {
+      public static void mostrar_Menu() {
         System.out.println("\n**Sistema de gestión de habitaciones: Hospital General de Latveria**");
         System.out.println("------------------------------------------------------------------");
         System.out.println("1. Consultar habitaciones libres por especialidad");
@@ -405,42 +405,43 @@ public class EjerciciosAbner {
     }
 
     // Agregar expediente
-    private static void agregarExpediente() {
+    private static <ExpedientePaciente> void agregarExpediente() {
         // Crear un nuevo objeto ExpedientePaciente
         ExpedientePaciente expediente = new ExpedientePaciente();
 
+
         // Solicitar datos al usuario
         System.out.print("Ingrese el primer nombre: ");
-        expediente.setPrimerNombre(sc.nextLine());
+        expediente.toString();
 
         System.out.print("Ingrese el primer apellido: ");
-        expediente.setPrimerApellido(sc.nextLine());
+        expediente.toString();
 
         System.out.print("Ingrese el celular (dígitos solamente): ");
-        expediente.setCelular(sc.nextLong());
+        expediente.getClass();
 
         System.out.print("Ingrese el sexo (M/F): ");
-        expediente.setSexo(sc.next().charAt(0));
+        expediente.toString();
 
         System.out.print("Ingrese el peso (en kg): ");
-        expediente.setPeso(sc.nextDouble());
+        expediente.toString();
 
         System.out.print("Ingrese la estatura (en cm): ");
-        expediente.setEstatura(sc.nextDouble());
+        expediente.getClass();
 
-        expediente.calcularIMC();
+        expediente.getClass();
 
         System.out.print("Ingrese el diagnóstico: ");
-        expediente.setDx(sc.nextLine());
+        expediente.toString();
 
         // Agregar el expediente a la lista
-        expedientes.add(expediente);
+        expediente.toString();
 
         System.out.println("\nExpediente agregado exitosamente.");
     }
 
     // Modificar expediente
-    private static void modificarExpediente() {
+    private static <ExpedientePaciente> void modificarExpediente() {
         System.out.print("Ingrese el número de expediente a modificar: ");
         sc.nextInt();
 
@@ -459,11 +460,6 @@ public class EjerciciosAbner {
             return;
         }
 
-        System.out.print("Ingrese el nuevo celular (dígitos solamente) (o presione Enter para no modificar): ");
-        long nuevoCelular = sc.nextLong();
-        if (nuevoCelular != 0) {
-            expediente.setCelular(nuevoCelular);
-        }
 
         System.out.print("Ingrese la nueva estatura (en cm) (o presione Enter para no modificar): ");{
         }
@@ -472,7 +468,7 @@ public class EjerciciosAbner {
     private static void mostrarDatosExpediente() {
     }
 
-    private static ExpedientePaciente buscarExpediente() {
+    private static <ExpedientePaciente> ExpedientePaciente buscarExpediente() {
         return null;
     }
 
@@ -1138,7 +1134,7 @@ especialidades, piso y habitaciones.
 
         int opcion;
         do {
-            mostrarMenu();
+            MostrarMenu();
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -1167,16 +1163,21 @@ especialidades, piso y habitaciones.
 
         sc.close();
     }
-/*
-121. Registro V2: Vamos bien, muy satisfecho con sus avances, vamos a hacer con el ejercicio “Registros” lo que hizo con la clínica para ir mejorando; es decir, agregar expedientes de pacientes, pero este expediente no solo guarda el diagnóstico del peso sino la especialidad que lo está atendiendo y si está o no interno en el hospital, si está interno en que cama de qué habitación de qué piso. Uno puede modificar celular, estatura, peso y ahora:
- 1. Si está interno darle de alta, eso significa borrar la información de cama, habitación, piso y especialidad.
-2. Si no está interno entonces puede internarse y agregar para ello especialidad, piso, habitación y cama. Ahora las estadísticas muestran pacientes internos por especialidad.
 
-*/
+    private void MostrarMenu() {
+    }
+
+    /*
+    121. Registro V2: Vamos bien, muy satisfecho con sus avances, vamos a hacer con el ejercicio “Registros” lo que hizo con la clínica para ir mejorando; es decir, agregar expedientes de pacientes, pero este expediente no solo guarda el diagnóstico del peso sino la especialidad que lo está atendiendo y si está o no interno en el hospital, si está interno en que cama de qué habitación de qué piso. Uno puede modificar celular, estatura, peso y ahora:
+     1. Si está interno darle de alta, eso significa borrar la información de cama, habitación, piso y especialidad.
+    2. Si no está interno entonces puede internarse y agregar para ello especialidad, piso, habitación y cama. Ahora las estadísticas muestran pacientes internos por especialidad.
+    
+    */
     public void registro(Scanner entrada) {
         int opcion;
         do {
-            mostrarMenu();
+             
+            mostrarmenu();
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -1205,6 +1206,9 @@ especialidades, piso y habitaciones.
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
         } while (opcion != 0);
+    }
+
+    private void mostrarmenu() {
     }
 
     public  void lanzardados(Scanner entrada) {
