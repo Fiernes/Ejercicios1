@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 import java.math.BigDecimal;
 
@@ -1144,9 +1145,8 @@ valor de la consulta, si el cliente paga colocar cuánto paga si no paga pues su
 llegar a abonar dinero a su deuda con la clínica (si es que la posee). Y, las estadísticas ahora no solo muestran sexo y diagnóstico sino listado de
 personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
     */
-    public void Clinica2(){
+    public void Clinica2(Scanner entrada){
         ClinicaNutricion2 clinica = new ClinicaNutricion2();
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("\n--- Menú Principal ---");
@@ -1156,8 +1156,8 @@ personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
             System.out.println("4. Mostrar deudores");
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
-            int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            int opcion = entrada.nextInt();
+            entrada.nextLine(); // Limpiar el buffer
 
             switch (opcion) {
                 case 1:
@@ -1165,20 +1165,20 @@ personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
                     while (true) {
                         System.out.println("Ingrese los datos del paciente:");
                         System.out.print("ID: ");
-                        int id = scanner.nextInt();
-                        scanner.nextLine(); // Limpiar el buffer
+                        int id = entrada.nextInt();
+                        entrada.nextLine(); // Limpiar el buffer
                         System.out.print("Nombre: ");
-                        String nombre = scanner.nextLine();
+                        String nombre = entrada.nextLine();
                         System.out.print("Género (M/F): ");
-                        String genero = scanner.nextLine();
+                        String genero = entrada.nextLine();
                         System.out.print("Diagnóstico: ");
-                        String diagnostico = scanner.nextLine();
+                        String diagnostico = entrada.nextLine();
 
                         Pacient paciente = new Pacient(id, nombre, genero, diagnostico);
                         clinica.agregarPaciente(paciente);
 
                         System.out.print("¿Desea ingresar otro paciente? (S/N): ");
-                        String respuesta = scanner.nextLine();
+                        String respuesta = entrada.nextLine();
                         if (respuesta.equalsIgnoreCase("N")) {
                             break;
                         }
@@ -1188,23 +1188,23 @@ personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
                     // Registrar consultas
                     while (true) {
                         System.out.print("Ingrese el ID del paciente para registrar una consulta: ");
-                        int idPaciente = scanner.nextInt();
+                        int idPaciente = entrada.nextInt();
                         System.out.print("Fecha (año): ");
-                        int year = scanner.nextInt();
+                        int year = entrada.nextInt();
                         System.out.print("Fecha (mes): ");
-                        int month = scanner.nextInt();
+                        int month = entrada.nextInt();
                         System.out.print("Fecha (día): ");
-                        int day = scanner.nextInt();
+                        int day = entrada.nextInt();
                         System.out.print("Costo de la consulta: ");
-                        double costoConsulta = scanner.nextDouble();
+                        double costoConsulta = entrada.nextDouble();
                         System.out.print("Monto abonado: ");
-                        double montoAbonado = scanner.nextDouble();
+                        double montoAbonado = entrada.nextDouble();
 
                         clinica.registrarConsulta(idPaciente, new Fecha(year, month, day), costoConsulta, montoAbonado);
 
-                        scanner.nextLine(); // Limpiar el buffer
+                        entrada.nextLine(); // Limpiar el buffer
                         System.out.print("¿Desea registrar otra consulta? (S/N): ");
-                        String respuesta = scanner.nextLine();
+                        String respuesta = entrada.nextLine();
                         if (respuesta.equalsIgnoreCase("N")) {
                             break;
                         }
@@ -1214,15 +1214,15 @@ personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
                     // Abonar deuda
                     while (true) {
                         System.out.print("Ingrese el ID del paciente para abonar deuda: ");
-                        int idPaciente = scanner.nextInt();
+                        int idPaciente = entrada.nextInt();
                         System.out.print("Monto a abonar: ");
-                        double montoAbonar = scanner.nextDouble();
+                        double montoAbonar = entrada.nextDouble();
 
                         clinica.abonarDeuda(idPaciente, montoAbonar);
 
-                        scanner.nextLine(); // Limpiar el buffer
+                        entrada.nextLine(); // Limpiar el buffer
                         System.out.print("¿Desea abonar otra deuda? (S/N): ");
-                        String respuesta = scanner.nextLine();
+                        String respuesta = entrada.nextLine();
                         if (respuesta.equalsIgnoreCase("N")) {
                             break;
                         }
@@ -1235,11 +1235,38 @@ personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
                 case 5:
                     // Salir
                     System.out.println("Saliendo del programa...");
-                    scanner.close();
                     return; // Termina el programa
                 default:
                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
             }
+        }
+    }
+
+    public void Bienvenida(){
+        String[] image = {
+                "         @@@@@@@@@@@@@@@@@         ",
+                "     @@@@@@@@@@@@@@@@@@@@@@@@@     ",
+                "  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  ",
+                " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ",
+                "@@@@@@@@@@@@@ BIENVENIDO A LA GUIA DE 121 EJERCICIOS ",
+                "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+                "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+                " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ",
+                "  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  ",
+                "     @@@@@@@@@@@@@@@@@@@@@@@@@     ",
+                "         @@@@@@@@@@@@@@@@@         "
+        };
+        for (String line : image) {
+            System.out.println(line);
+        }
+    }
+
+    public void PresionarEnter(){
+        try {
+            System.out.println("Presiona Enter para continuar...");
+            System.in.read(); // Espera hasta que se presione Enter
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
