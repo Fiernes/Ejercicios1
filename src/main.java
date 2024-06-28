@@ -26,6 +26,7 @@ public class main {
         //Fidel.Pollos(entrada);
         //Fidel.Grafos(entrada);
         //Fidel.Clinica2();
+        //mis ejercicios
 
     }
 }
