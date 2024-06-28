@@ -1206,7 +1206,56 @@ especialidades, piso y habitaciones.
             }
         } while (opcion != 0);
     }
+
+    public  void lanzardados(Scanner entrada) {
+        // Constantes
+        final int CANTIDAD_SIMULACIONES = 36000; // Número de lanzamientos de dados a realizar
+        final int[] resultados = new int[12]; // Array para almacenar la frecuencia de cada suma
+
+        // Simulación de lanzamientos
+        Random random = new Random();
+        for (int i = 0; i < CANTIDAD_SIMULACIONES; i++) {
+            int dado1 = random.nextInt(6) + 1; // Lanzamiento del primer dado
+            int dado2 = random.nextInt(6) + 1; // Lanzamiento del segundo dado
+            int suma = dado1 + dado2;
+
+            resultados[suma - 2]++; // Incrementar el contador para la suma obtenida
+        }
+
+        // Mostrar resultados
+        System.out.println("\nResultados de " + CANTIDAD_SIMULACIONES + " lanzamientos de dados:");
+        System.out.println("Suma\tFrecuencia\tProbabilidad Esperada\tPorcentaje Real");
+        System.out.println("----\t---------\t---------------------\t--------------");
+
+        for (int i = 2; i <= 12; i++) {
+            double probabilidadEsperada = (double) i / 36; // Probabilidad teórica para cada suma
+            double porcentajeReal = (double) resultados[i - 2] / CANTIDAD_SIMULACIONES * 100;
+
+            System.out.println(i + "\t" + resultados[i - 2] + "\t\t" +
+                    String.format("%.4f", probabilidadEsperada) + "\t\t" +
+                    String.format("%.2f%%", porcentajeReal));
+        }
+
+        // Análisis de resultados
+        System.out.println("\nAnálisis de resultados:");
+        boolean resultadosRazonables = true;
+
+        for (int i = 2; i <= 12; i++) {
+            if (Math.abs(resultados[i - 2] - (CANTIDAD_SIMULACIONES / 6)) > CANTIDAD_SIMULACIONES * 0.05) {
+                resultadosRazonables = false;
+                System.out.println("La suma " + i + " no se aproxima a la probabilidad esperada (esperado: ~1/6, real: " +
+                        String.format("%.2f%%", (double) resultados[i - 2] / CANTIDAD_SIMULACIONES * 100) + ")");
+                break;
+            }
+        }
+
+        if (resultadosRazonables) {
+            System.out.println("Los resultados son razonables. Se observa una distribución relativamente uniforme de las sumas, " +
+                    "con una ligera variabilidad aleatoria esperada.");
+        }
+    }
 }
+
 
 
 

@@ -24,7 +24,7 @@ public class main {
         //abner.ejercicio109(entrada);
         //abner.hospital(entrada);
        //abner.registro(entrada);
-
+        //abner.lanzardados(entrada);
 
 
     }
