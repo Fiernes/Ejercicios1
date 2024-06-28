@@ -150,8 +150,6 @@ public class EjerciciosAdrian {
                 break;
             }
         }
-
-        sc.close();
     }
 
     /*Prompt-Ejercicio #26: Crea un programa en JAVA que se llamará "CopiarPegar" el cual utiliza una instrucción while y la secuencia de escape de tabulación \t para imprimir una tabla 
@@ -251,8 +249,6 @@ public class EjerciciosAdrian {
                     System.out.println("Opción no válida. Intente de nuevo.");
             }
         } while (option != 5);
-
-        scanner.close();
     }
 
     private static int showMenu(Scanner scanner) {
@@ -935,8 +931,6 @@ public class EjerciciosAdrian {
                 break;
             }
         }
-
-        scanner.close();
     }
 
     private static void mostrarResultados(int[][] ventas) {

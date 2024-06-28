@@ -15,15 +15,22 @@ public class main {
             Fidel.PresionarEnter();
             System.out.println("Seleccione el número del ejercicio (1-121) o 0 para salir:");
             int seleccion = entrada.nextInt();
-
             if (seleccion == 0) {
                 continuar = false;
             } else if (seleccion > 0 && seleccion <= 121) {
                 if (seleccion >= 17){
-                    menuIdiomaOFinalizar(entrada);
+                    menuIdioma(entrada);
                     Fidel.PresionarEnter();
+                    System.out.println("¿Desea continuar o finalizar el programa y volver al menu principal?");
+                    System.out.println("1. Finalizar");
+                    System.out.println("2. Continuar");
+                    int opci = entrada.nextInt();
+                    if(opci == 2){
+                        ejecutarEjercicio(seleccion, entrada);
+                    }
+                }else{
+                    ejecutarEjercicio(seleccion, entrada);
                 }
-                ejecutarEjercicio(seleccion, entrada);
             } else {
                 System.out.println("Selección inválida. Intente de nuevo.");
             }
@@ -231,7 +238,7 @@ public class main {
         }
     }
 
-    public static void menuIdiomaOFinalizar(Scanner entrada) {
+    public static void menuIdioma(Scanner entrada) {
         System.out.println("Seleccione un idioma:");
         System.out.println("1. Español");
         System.out.println("2. Inglés");
@@ -431,11 +438,12 @@ public class main {
         }
     }
 
-    public static void cambiarIdioma(Scanner entrada) {
-        System.out.println("Función de cambiar idioma no implementada.");
-        // Aquí podrías agregar la lógica para cambiar el idioma.
+    public static void ContinuarOFinalizar(Scanner entrada) {
+        System.out.println("¿Desea continuar o finalizar el programa y volver al menu principal?");
+
     }
 }
+
 
 
 

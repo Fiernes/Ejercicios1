@@ -53,8 +53,6 @@ public class HospitalManagement {
                     break;
             }
         } while (opcion != 0);
-
-        scanner.close();
     }
 
     // Función para obtener el nombre de la especialidad según su índice
