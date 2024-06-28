@@ -13,7 +13,7 @@ public class HospitalManagement {
     // [especialidad][piso][habitacion][cama]
     private static int[][][][] hospital = new int[NUM_ESPECIALIDADES][NUM_PISOS][NUM_HABITACIONES][CAMAS_POR_HABITACION];
 
-    public static void main(String[] args) {
+    public void hospital() {
         Scanner scanner = new Scanner(System.in);
 
         int opcion;
