@@ -2,7 +2,6 @@ public class main {
 
     public static void main(String[] args) {
 
-        EjerciciosFidel Fidel = new EjerciciosFidel();
         EjercicioCesar cesar = new EjercicioCesar();
         ClinicaNutricion Fiallos = new ClinicaNutricion();
 
@@ -25,7 +24,7 @@ public class main {
         cesar.Vectores();
         cesar.burbuja();
         cesar.pollos();
-         cesar.metereologico();
+        cesar.metereologico();
         Fiallos.clinica();
 
 }
