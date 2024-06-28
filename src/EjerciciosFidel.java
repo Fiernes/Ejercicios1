@@ -668,18 +668,18 @@ c.La primera columna está formada por todos los números entre el primero y el 
         }
     }
 
-/*
-83. como hago esto: Modifique el programa del ejercicio “Instrucción asistida por computadora” para implementar una librería propia.
-en este codigo: public void InstruccionAsistida() { Scanner scanner = new Scanner(System.in); boolean continuar = true; while (continuar) {
-int correctas = 0; int incorrectas = 0; for (int i = 0; i < 10; i++) { System.out.print("Pregunta " + (i + 1) + ": ");
-String respuesta = scanner.next(); if (esCorrecta(respuesta)) { correctas++; } else { incorrectas++; } }
-double porcentajeCorrectas = calcularPorcentaje(correctas); System.out.println("Porcentaje de respuestas correctas: " + porcentajeCorrectas + "%");
-if (porcentajeCorrectas < 75) { System.out.println("Por favor pida ayuda adicional a su instructor."); continuar = false; } else {
-continuar = preguntarContinuar(scanner); } } scanner.close(); } public boolean esCorrecta(String respuesta) {
-Aquí implementas la lógica para determinar si la respuesta es correcta o no // Por ejemplo, compara la respuesta con una cadena que consideres correcta
-return respuesta.equalsIgnoreCase("si"); // Cambia esto por la lógica correcta } public double calcularPorcentaje(int correctas) { return (double) correctas / 10 * 100; }
-public boolean preguntarContinuar(Scanner scanner) { System.out.print("¿Desea continuar? (s/n): "); String respuesta = scanner.next(); return respuesta.equalsIgnoreCase("s"); }
-*/
+    /*
+    83. como hago esto: Modifique el programa del ejercicio “Instrucción asistida por computadora” para implementar una librería propia.
+    en este codigo: public void InstruccionAsistida() { Scanner scanner = new Scanner(System.in); boolean continuar = true; while (continuar) {
+    int correctas = 0; int incorrectas = 0; for (int i = 0; i < 10; i++) { System.out.print("Pregunta " + (i + 1) + ": ");
+    String respuesta = scanner.next(); if (esCorrecta(respuesta)) { correctas++; } else { incorrectas++; } }
+    double porcentajeCorrectas = calcularPorcentaje(correctas); System.out.println("Porcentaje de respuestas correctas: " + porcentajeCorrectas + "%");
+    if (porcentajeCorrectas < 75) { System.out.println("Por favor pida ayuda adicional a su instructor."); continuar = false; } else {
+    continuar = preguntarContinuar(scanner); } } scanner.close(); } public boolean esCorrecta(String respuesta) {
+    Aquí implementas la lógica para determinar si la respuesta es correcta o no // Por ejemplo, compara la respuesta con una cadena que consideres correcta
+    return respuesta.equalsIgnoreCase("si"); // Cambia esto por la lógica correcta } public double calcularPorcentaje(int correctas) { return (double) correctas / 10 * 100; }
+    public boolean preguntarContinuar(Scanner scanner) { System.out.print("¿Desea continuar? (s/n): "); String respuesta = scanner.next(); return respuesta.equalsIgnoreCase("s"); }
+    */
     public void InstrucciónAsistidaComputadora2(Scanner entrada){
 
         InstruccionAsistidaLib lib = new InstruccionAsistidaLib(); // Crear una instancia de la librería
@@ -721,14 +721,14 @@ public boolean preguntarContinuar(Scanner scanner) { System.out.print("¿Desea c
         }
     }
 
-/*
-89. me generas el codigo en java de esto:
-Te leo, de verdad: Hacer un programa que pida al usuario un número entero mayor que diez y menor que cien, luego leer
-tantos números como el que haya ingresado el usuario entonces muestre en una lista todos los números separados por coma
-(el último lleva punto después de él y la letra “y” en lugar de coma antes que él. Y pida al usuario cinco números (almacenados en un solo arreglo)
-esos números deben estar entre 0 y el primer número que se le pidió ingresar al usuario y, finalmente mostrar una tabla donde aparezcan estos
-cinco números en la primera columna y en la segunda el número de la lista de números en la posición de la primera columna. Así:
-*/
+    /*
+    89. me generas el codigo en java de esto:
+    Te leo, de verdad: Hacer un programa que pida al usuario un número entero mayor que diez y menor que cien, luego leer
+    tantos números como el que haya ingresado el usuario entonces muestre en una lista todos los números separados por coma
+    (el último lleva punto después de él y la letra “y” en lugar de coma antes que él. Y pida al usuario cinco números (almacenados en un solo arreglo)
+    esos números deben estar entre 0 y el primer número que se le pidió ingresar al usuario y, finalmente mostrar una tabla donde aparezcan estos
+    cinco números en la primera columna y en la segunda el número de la lista de números en la posición de la primera columna. Así:
+    */
     public void TeLeoVerdad(Scanner entrada) {
 
         // Pedir al usuario un número entero mayor que diez y menor que cien
@@ -920,6 +920,327 @@ System.out.println();
             System.out.print(arreglo[i] + ", ");
         }
         System.out.println();
+    }
+
+
+    /*
+    107. Me ayudas a generar este codigo en java e intellij Como el que vende pollos que está en todos lados: Hay una tienda con cinco sucursales,
+    se requiere un programa que implemente un arreglo para lo siguiente:
+    a.Leer el total de ventas por día (de lunes a sábado) de cada una de las tiendas.
+    b.Usar función para imprimir la matriz de sucursales vr ventas por día
+    c.Ahora hacer una matriz que contenga no solo la información de ventas de sucursal por día sino que incluya las ventas semanales por tienda y las ventas totales por cada día.
+    d.La función usada en el inciso b debe poder mostrar esta nueva matriz en pantalla. Quiero agregar estas funciones
+    a el codigo anterior Toda una empresa: Al programa “Como el que vende pollos que está en todos lados” vamos agregar dos funciones una que,
+     recibiendo la segunda matriz identifique la venta que más ha vendido semanalmente y su representación porcentual sobre las ventas totales y
+     otra que, también recibiendo la segunda matriz, determine el día que más se vendió con su respectiva representación porcentual sobre el total;
+     se debe mostrar todo lo del inciso 99 y las salidas adicionales propias de las funciones creadas en este ejercicio.
+    */
+    public void Pollos(Scanner entrada) {
+
+        int[][] ventasPorDia = new int[5][6]; // 5 sucursales, 6 días (lunes a sábado)
+
+        System.out.println("Ingrese las ventas por día para cada sucursal:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Sucursal " + (i + 1) + ":");
+            for (int j = 0; j < 6; j++) {
+                System.out.print("Día " + (j + 1) + ": ");
+                ventasPorDia[i][j] = entrada.nextInt();
+            }
+        }
+
+        imprimirMatriz(ventasPorDia, "Ventas por día por sucursal");
+
+        int[][] ventasTotales = calcularVentasTotales(ventasPorDia);
+
+        imprimirMatriz(ventasTotales, "Ventas totales por día y sucursal");
+
+        identificarMayorVentaSemanal(ventasTotales);
+        identificarDiaMayorVenta(ventasTotales);
+
+        System.out.println("¿Desea continuar? (s/n)");
+        String respuesta = entrada.next();
+        if (respuesta.equalsIgnoreCase("s")) {
+            Pollos(entrada);
+        } else {
+            System.out.println("Adiós!");
+        }
+    }
+
+    public static void imprimirMatriz(int[][] matriz, String titulo) {
+        System.out.println(titulo);
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println(" = ");
+    }
+
+    public static int[][] calcularVentasTotales(int[][] ventasPorDia) {
+        int[][] ventasTotales = new int[6][6]; // 6 días, 6 columnas (5 sucursales + total)
+
+        // Calcular ventas totales por día
+        for (int j = 0; j < 6; j++) {
+            int totalDia = 0;
+            for (int i = 0; i < 5; i++) {
+                totalDia += ventasPorDia[i][j];
+            }
+            ventasTotales[j][5] = totalDia;
+        }
+
+        // Calcular ventas totales por sucursal
+        for (int i = 0; i < 5; i++) {
+            int totalSucursal = 0;
+            for (int j = 0; j < 6; j++) {
+                totalSucursal += ventasPorDia[i][j];
+            }
+            ventasTotales[5][i] = totalSucursal;
+        }
+
+        // Copiar ventas por día a la nueva matriz
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 6; j++) {
+                ventasTotales[j][i] = ventasPorDia[i][j];
+            }
+        }
+        return ventasTotales;
+    }
+
+    public static void identificarMayorVentaSemanal(int[][] ventasTotales) {
+        int mayorVenta = 0;
+        int sucursalMayorVenta = -1;
+        int totalVentasSemanal = 0;
+
+        // Calcular total de ventas semanal
+        for (int i = 0; i < 5; i++) {
+            totalVentasSemanal += ventasTotales[5][i];
+        }
+
+        // Identificar la mayor venta semanal por sucursal
+        for (int i = 0; i < 5; i++) {
+            if (ventasTotales[5][i] > mayorVenta) {
+                mayorVenta = ventasTotales[5][i];
+                sucursalMayorVenta = i;
+            }
+        }
+
+        double porcentaje = (double) mayorVenta / totalVentasSemanal * 100;
+
+        System.out.println("La sucursal que más vendió en la semana fue la Sucursal " + (sucursalMayorVenta + 1) +
+                " con " + mayorVenta + " ventas, representando el " + String.format("%.2f", porcentaje) + "% del total.");
+    }
+
+    public static void identificarDiaMayorVenta(int[][] ventasTotales) {
+        int mayorVenta = 0;
+        int diaMayorVenta = -1;
+        int totalVentasDiarias = 0;
+
+        // Calcular total de ventas diarias
+        for (int i = 0; i < 6; i++) {
+            totalVentasDiarias += ventasTotales[i][5];
+        }
+
+        // Identificar el día con mayor venta
+        for (int i = 0; i < 6; i++) {
+            if (ventasTotales[i][5] > mayorVenta) {
+                mayorVenta = ventasTotales[i][5];
+                diaMayorVenta = i;
+            }
+        }
+
+        double porcentaje = (double) mayorVenta / totalVentasDiarias * 100;
+
+        System.out.println("El día que más se vendió fue el Día " + (diaMayorVenta + 1) +
+                " con " + mayorVenta + " ventas, representando el " + String.format("%.2f", porcentaje) + "% del total.");
+    }
+
+
+    /*
+    me creas este programa con java y con el ide de Intellij: ¿Grafos?: Representamos diez ciudades con números del 0 al 9.
+    Cuando hay carretera que une directamente a dos ciudades i y j, almacenamos su distancia en kilómetros en la celda d[i][j] de una
+    matriz de 10×10 enteros. Si no hay carretera entre ambas ciudades, el valor almacenado en su celda es cero. Nos suministran un
+    vector en el que se describe un trayecto que pasa por las 10 ciudades. Determina si se trata de un trayecto válido (las dos ciudades de
+    todo par consecutivo están unidas por un tramo de carretera) y, en tal caso, devuelve el número de kilómetros del trayecto. Si el trayecto no es
+     válido, indícalo con un mensaje por pantalla. La matriz de distancias deberá inicializarla explícitamente al declararla (llenarla con
+     valores aleatorios que vayan de 20KM a 600Km). El vector con el recorrido de ciudades deberá leerlo de teclado.
+    */
+    public void Grafos(Scanner entrada){
+        int[][] d = new int[10][10];
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (i == j) {
+                    d[i][j] = 0; // Distancia a sí misma es 0
+                } else {
+                    d[i][j] = (int) (Math.random() * (600 - 20 + 1)) + 20;
+                }
+            }
+        }
+
+        // Lectura del vector de recorrido (trayecto) desde teclado
+
+        System.out.println("Ingrese el recorrido de ciudades: ");
+        int[] trayecto = new int[10];
+        boolean continuar = false;
+        for (int i = 0; i < 10; i++) {
+            do {
+                System.out.println("Introduce un número entre 0 y 9 para la ciudad " + (i + 1) + ": ");
+                int numero = entrada.nextInt(); // Leer el número solo una vez
+                if (numero < 0 || numero > 9) {
+                    System.out.println("ERROR EN EL INGRESO DEL NÚMERO. INGRESE UN NÚMERO CORRECTO ENTRE 0 Y 9.");
+                    continuar = false;
+                } else {
+                    trayecto[i] = numero;
+                    continuar = true;
+                }
+            } while (!continuar);
+        }
+
+        // Verificación de validez del trayecto
+        boolean valido = true;
+        int distanciaTotal = 0;
+        for (int i = 0; i < trayecto.length - 1; i++) {
+            int ciudadActual = trayecto[i];
+            int siguienteCiudad = trayecto[i + 1];
+
+            if (d[ciudadActual][siguienteCiudad] == 0) {
+                valido = false;
+                System.out.println("El trayecto no es válido: No hay carretera entre " + ciudadActual + " y " + siguienteCiudad);
+                break;
+            } else {
+                distanciaTotal += d[ciudadActual][siguienteCiudad];
+            }
+        }
+
+        // Si el trayecto es válido, se muestra la distancia total
+        if (valido) {
+            System.out.println("El trayecto es válido. La distancia total es de " + distanciaTotal + " kilómetros.");
+        }
+    }
+
+
+    /*
+119. me ayudas a generar este codigo en java con el ide de Intellij:
+Consultas y el inicio de la parte financiera: La clínica de nutrición está muy contenta con su trabajo así que ahora no solo requiere un control de
+expedientes, sino que quieren un pequeño apoyo en la parte financiera. Es necesario que cree un expediente de consultas para cada paciente, para ello
+crear una estructura que contenga el expediente del paciente y dos arreglos uno con las fechas de la consulta y otro con los precios pagados en c
+ada consulta, también debe incluir monto pagado y monto pendiente. Obviamente cuando se crea un paciente se crea su expediente.
+Recuerde tiene un arreglo de pacientes y un arreglo de expedientes de pago, el registro de pacientes ya lo conoce el de expediente de pago puede ser así:
+Nombre: expediente Pago
+Tipo	Variable	Observación
+int	expediente	Coincide con el expediente en el arreglo de pacientes.
+fechac[100]	consultas	Es un arreglo de registros fechac, un paciente solo puede tener 100 consultas.
+double[100]	monto	A la consulta fechac[i] le corresponde el monto[i] así sabemos cuánto costó esa consulta.
+double	pagado	Cuanto nos ha pagado el paciente en total
+double	pendiente	Cuando nos debe el paciente
+Fecha podría ser de la siguiente forma:
+Nombre: fechac
+Tipo	Variable	Observación
+int	agno	Año de la consulta
+int	mes	Mes de la consulta (obvio no enteros negativos ni mayores que doce)
+int	dia	Día del mes (no negativo no mayor que 31)
+El sistema ya no solo muestra las opciones de expediente sino que ahora se puede realizar consulta, se ingresa el expediente, fecha de consulta,
+valor de la consulta, si el cliente paga colocar cuánto paga si no paga pues sube la deuda con la clínica. En cualquier momento el paciente puede
+llegar a abonar dinero a su deuda con la clínica (si es que la posee). Y, las estadísticas ahora no solo muestran sexo y diagnóstico sino listado de
+personas que le deben a la clínica ordenadas de mayor deuda a menor deuda
+    */
+    public void Clinica2(){
+        ClinicaNutricion2 clinica = new ClinicaNutricion2();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n--- Menú Principal ---");
+            System.out.println("1. Ingresar datos de paciente");
+            System.out.println("2. Registrar consulta");
+            System.out.println("3. Abonar deuda");
+            System.out.println("4. Mostrar deudores");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer
+
+            switch (opcion) {
+                case 1:
+                    // Ingreso de datos de los pacientes
+                    while (true) {
+                        System.out.println("Ingrese los datos del paciente:");
+                        System.out.print("ID: ");
+                        int id = scanner.nextInt();
+                        scanner.nextLine(); // Limpiar el buffer
+                        System.out.print("Nombre: ");
+                        String nombre = scanner.nextLine();
+                        System.out.print("Género (M/F): ");
+                        String genero = scanner.nextLine();
+                        System.out.print("Diagnóstico: ");
+                        String diagnostico = scanner.nextLine();
+
+                        Pacient paciente = new Pacient(id, nombre, genero, diagnostico);
+                        clinica.agregarPaciente(paciente);
+
+                        System.out.print("¿Desea ingresar otro paciente? (S/N): ");
+                        String respuesta = scanner.nextLine();
+                        if (respuesta.equalsIgnoreCase("N")) {
+                            break;
+                        }
+                    }
+                    break;
+                case 2:
+                    // Registrar consultas
+                    while (true) {
+                        System.out.print("Ingrese el ID del paciente para registrar una consulta: ");
+                        int idPaciente = scanner.nextInt();
+                        System.out.print("Fecha (año): ");
+                        int year = scanner.nextInt();
+                        System.out.print("Fecha (mes): ");
+                        int month = scanner.nextInt();
+                        System.out.print("Fecha (día): ");
+                        int day = scanner.nextInt();
+                        System.out.print("Costo de la consulta: ");
+                        double costoConsulta = scanner.nextDouble();
+                        System.out.print("Monto abonado: ");
+                        double montoAbonado = scanner.nextDouble();
+
+                        clinica.registrarConsulta(idPaciente, new Fecha(year, month, day), costoConsulta, montoAbonado);
+
+                        scanner.nextLine(); // Limpiar el buffer
+                        System.out.print("¿Desea registrar otra consulta? (S/N): ");
+                        String respuesta = scanner.nextLine();
+                        if (respuesta.equalsIgnoreCase("N")) {
+                            break;
+                        }
+                    }
+                    break;
+                case 3:
+                    // Abonar deuda
+                    while (true) {
+                        System.out.print("Ingrese el ID del paciente para abonar deuda: ");
+                        int idPaciente = scanner.nextInt();
+                        System.out.print("Monto a abonar: ");
+                        double montoAbonar = scanner.nextDouble();
+
+                        clinica.abonarDeuda(idPaciente, montoAbonar);
+
+                        scanner.nextLine(); // Limpiar el buffer
+                        System.out.print("¿Desea abonar otra deuda? (S/N): ");
+                        String respuesta = scanner.nextLine();
+                        if (respuesta.equalsIgnoreCase("N")) {
+                            break;
+                        }
+                    }
+                    break;
+                case 4:
+                    // Mostrar deudores
+                    clinica.mostrarDeudores();
+                    break;
+                case 5:
+                    // Salir
+                    System.out.println("Saliendo del programa...");
+                    scanner.close();
+                    return; // Termina el programa
+                default:
+                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+            }
+        }
     }
 }
 

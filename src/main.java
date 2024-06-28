@@ -23,5 +23,9 @@ public class main {
         //Fidel.TeLeoVerdad(entrada);
         //Fidel.VectuEliges(entrada);
         //Fidel.OrdenamientoOptimizado(entrada);
+        //Fidel.Pollos(entrada);
+        //Fidel.Grafos(entrada);
+        //Fidel.Clinica2();
+
     }
 }
