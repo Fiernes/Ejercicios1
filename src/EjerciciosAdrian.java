@@ -8,7 +8,6 @@ Autor: Adrian Wasani Martinez Bonilla.
 * */
 public class EjerciciosAdrian {
 
-
     /* Prompt-Ejercicio #1: Crea un encabezado para mis programas en JAVA que irá antes de los programas como comentario, el encabezado contendrá: nombre, apodo, correo electrónico, fecha, código correlativo
     al ejercicio que estoy desarrollando y un espacio para escribir un análisis/resumen de mi ejercicio, también debe existir una versión corta de este encabezado para cuando trabaje con
     otras personas. Para este caso este encabezado irá junto a un programa el cual mostrará como salida un saludo al usuario. El programa se llamará EjemploSello.
@@ -360,6 +359,185 @@ public class EjerciciosAdrian {
         }
     }
 
+    /*Prompt-Ejercicio #50: Crea un programa en JAVA, FiguraV2: Hacer un programa que elija entre cualquiera de las siguientes figuras: Círculo, cuadrado, triángulo, rectángulo y
+    rombo y depende de la figura elegida solicite la información necesaria para hacer el cálculo de su área y de su perímetro. Debe mostrar la figura seleccionada
+    (nombre y dibujada), las entradas del usuario y los resultados obtenidos.
+    * */
+    public void FiguraV2() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Display the menu and get the user's choice
+        System.out.println("Seleccione la figura que desea calcular:");
+        System.out.println("1. Círculo");
+        System.out.println("2. Cuadrado");
+        System.out.println("3. Triángulo");
+        System.out.println("4. Rectángulo");
+        System.out.println("5. Rombo");
+        System.out.print("Su elección: ");
+        int choice = scanner.nextInt();
+
+        // Calculate and display the area and perimeter based on the user's choice
+        switch (choice) {
+            case 1:
+                calculateCircleAreaAndPerimeter(scanner);
+                break;
+            case 2:
+                calculateSquareAreaAndPerimeter(scanner);
+                break;
+            case 3:
+                calculateTriangleAreaAndPerimeter(scanner);
+                break;
+            case 4:
+                calculateRectangleAreaAndPerimeter(scanner);
+                break;
+            case 5:
+                calculateRhombusAreaAndPerimeter(scanner);
+                break;
+            default:
+                System.out.println("Opción no válida.");
+        }
+    }
+
+    private static void calculateCircleAreaAndPerimeter(Scanner scanner) {
+        System.out.print("Ingrese el radio del círculo: ");
+        double radius = scanner.nextDouble();
+
+        double area = Math.PI * radius * radius;
+        double perimeter = 2 * Math.PI * radius;
+
+        System.out.println("\nFigura seleccionada: Círculo");
+        System.out.println("Radio: " + radius);
+        System.out.printf("Área: %.2f\n", area);
+        System.out.printf("Perímetro: %.2f\n", perimeter);
+
+        // Draw a simple circle using ASCII characters (for demonstration only)
+        for (int i = 0; i <= radius; i++) {
+            for (int j = (int) -radius; j <= radius; j++) {
+                double x = i - (radius / 2);
+                double y = j - (radius / 2);
+                if (Math.sqrt(x * x + y * y) <= radius) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    private static void calculateSquareAreaAndPerimeter(Scanner scanner) {
+        System.out.print("Ingrese la longitud del lado del cuadrado: ");
+        double sideLength = scanner.nextDouble();
+
+        double area = sideLength * sideLength;
+        double perimeter = 4 * sideLength;
+
+        System.out.println("\nFigura seleccionada: Cuadrado");
+        System.out.println("Longitud del lado: " + sideLength);
+        System.out.printf("Área: %.2f\n", area);
+        System.out.printf("Perímetro: %.2f\n", perimeter);
+
+        // Draw a simple square using ASCII characters (for demonstration only)
+        for (int i = 0; i < sideLength; i++) {
+            for (int j = 0; j < sideLength; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void calculateTriangleAreaAndPerimeter(Scanner scanner) {
+        System.out.print("Ingrese la longitud de la base del triángulo: ");
+        double base = scanner.nextDouble();
+
+        System.out.print("Ingrese la altura del triángulo: ");
+        double height = scanner.nextDouble();
+
+        double area = 0.5 * base * height;
+
+        System.out.print("Ingrese la longitud del lado 1: ");
+        double side1 = scanner.nextDouble();
+
+        System.out.print("Ingrese la longitud del lado 2: ");
+        double side2 = scanner.nextDouble();
+
+        System.out.print("Ingrese la longitud del lado 3: ");
+        double side3 = scanner.nextDouble();
+
+        double perimeter = side1 + side2 + side3;
+
+        System.out.println("\nFigura seleccionada: Triángulo");
+        System.out.println("Base: " + base);
+        System.out.println("Altura: " + height);
+        System.out.printf("Área: %.2f\n", area);
+        System.out.printf("Perímetro: %.2f\n", perimeter);
+
+        // Draw a simple triangle using ASCII characters (for demonstration only)
+        for (int i = 0; i <= height; i++) {
+            for (int j = 0; j <= base; j++) {
+                if (i <= (height / base) * j) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    private static void calculateRectangleAreaAndPerimeter(Scanner scanner) {
+        System.out.print("Ingrese la longitud de la base del rectángulo: ");
+        double base = scanner.nextDouble();
+
+        System.out.print("Ingrese la altura del rectángulo: ");
+        double height = scanner.nextDouble();
+
+        double area = base * height;
+        double perimeter = 2 * (base + height);
+
+        System.out.println("\nFigura seleccionada: Rectángulo");
+        System.out.println("Base: " + base);
+        System.out.println("Altura: " + height);
+        System.out.printf("Área: %.2f\n", area);
+        System.out.printf("Perímetro: %.2f\n", perimeter);
+
+        // Draw a simple rectangle using ASCII characters (for demonstration only)
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < base; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void calculateRhombusAreaAndPerimeter(Scanner scanner) {
+        System.out.print("Ingrese la longitud del lado del rombo: ");
+        double sideLength = scanner.nextDouble();
+
+        System.out.print("Ingrese el ángulo agudo del rombo en grados: ");
+        double angle = scanner.nextDouble();
+
+        double area = sideLength * sideLength * Math.sin(Math.toRadians(angle));
+        double perimeter = 4 * sideLength;
+
+        System.out.println("\nFigura seleccionada: Rombo");
+        System.out.println("Longitud del lado: " + sideLength);
+        System.out.println("Ángulo agudo: " + angle + " grados");
+        System.out.printf("Área: %.2f\n", area);
+        System.out.printf("Perímetro: %.2f\n", perimeter);
+
+        // Draw a simple rhombus using ASCII characters (for demonstration only)
+        for (int i = 0; i < sideLength; i++) {
+            for (int j = 0; j < sideLength - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < sideLength; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     /*Prompt-Ejercicio #56: Crea un programa en JAVA, AlineaNombre: que utilice una función getline con las líbrerias string e iostream, mediante un ciclo solicite al usuario ingrese cinco nombres formados por el primer
      nombre y primer apellido y lo imprima en pantalla alineado a la izquierda. No utilizar arreglos e importante la validación de las entradas.
     * */
@@ -544,6 +722,18 @@ public class EjerciciosAdrian {
     }
 
 
+    /*Prompt-Ejercicio #80: A raíz de este código créame una librería propia para usar en otros códigos.
+    * */
+        public void MiLibreria() {
+            Scanner entrada = new Scanner(System.in);
+
+            System.out.print("Ingrese un número del 1 al 15: ");
+            int numeroUsuario = entrada.nextInt();
+
+            TablaMultiplicacion.generarTabla(numeroUsuario);
+        }
+
+
     /*Prompt-Ejercicio #86: Crea un programa en JAVA, ImpArchivo: que escriba un mensaje, escrito por el usuario, en un archivo de texto para ello se debe pedir al usuario
     el mensaje. Algo importante a considerar es la validación para el ingreso del nombre de archivo, que sea de la manera que lo exige el programa.
     * */
@@ -574,6 +764,66 @@ public class EjerciciosAdrian {
 
 
     }
+
+        /*Prompt-Ejercicio #92: Incorpora al código lo siguiente (Ejercicio #91 de está guia): una función espar(float) que; retornando un booleano, determina si el valor recibido es par, también usando la función espar() contar
+        los números pares e impares de la salida final (los cinco números, después de la tabla aparezca también el total de pares, total de impares y total de haber sumado los valores, los cuadrados y los cubos, luego ya por ultimo
+         muestra el total de cuadrados, total de cubos, total de pares e impares no son variables diferentes, todas son parte del vector TOTALES.
+        * */
+        public void ejercicio91() {
+            // ... (código para solicitar y validar el número inicial, leer la lista de números y los números clave, igual que antes)
+
+            // Generar y mostrar la tabla
+            System.out.println("\nTabla:");
+            System.out.println("Número clave\tPosición en la lista\tValor\tCuadrado\tCubo");
+            int[] numerosClave = new int[0];
+            float[] totales = new float[4]; // Inicializar vector TOTALES con 4 posiciones: 0=pares, 1=impares, 2=sumaValores, 3=sumaCubos
+
+            for (int i = 0; i < numerosClave.length; i++) {
+                int[] listaNumeros = new int[0];
+                int posicionLista = hashCode(numerosClave[i], listaNumeros); // Implementar función hashCode correctamente
+                float valor = listaNumeros[posicionLista];
+                float cuadrado = calcularCuadrado(valor); // Implementar función calcularCuadrado
+                float cubo = calcularCubo(valor); // Implementar función calcularCubo
+
+                System.out.println(numerosClave[i] + "\t\t" + (posicionLista + 1) + "\t" + valor + "\t" + cuadrado + "\t" + cubo);
+
+                // Actualizar vector TOTALES
+                totales[0] += espar(valor) ? 1 : 0; // Contar pares con función espar
+                totales[1] += !espar(valor) ? 1 : 0; // Contar impares con función espar
+                totales[2] += valor;
+                totales[2] += cuadrado;
+                totales[3] += cubo;
+            }
+
+            // Mostrar estadísticas finales
+            System.out.println("\nEstadísticas:");
+            System.out.println("Total pares: " + totales[0]);
+            System.out.println("Total impares: " + totales[1]);
+            System.out.println("Suma valores: " + totales[2]);
+            System.out.println("Suma cuadrados: " + totales[2]); // Suma de valores ya incluye cuadrados
+            System.out.println("Suma cubos: " + totales[3]);
+        }
+
+        // Función para determinar si un número es par (retorna true) o impar (retorna false)
+        private boolean espar(float valor) {
+            return valor % 2 == 0;
+        }
+
+        // Implementar la función calcularCuadrado que eleva un valor float al cuadrado
+        private float calcularCuadrado(float valor) {
+            return valor * valor;
+        }
+
+        // Implementar la función calcularCubo que eleva un valor float al cubo
+        private float calcularCubo(float valor) {
+            return (float) Math.pow(valor, 3);
+        }
+
+        // Implementar la función hashCode de forma adecuada según el contexto del código
+        private int hashCode(int numeroClave, int[] listaNumeros) {
+            // Implementar la lógica para calcular el hash code considerando el número clave y la lista de números
+            return 0; // Reemplazar con la implementación correcta
+        }
 
 
     /*Prompt-Ejercicio #98: Crea un programa en JAVA, MatrizV2:Que haga una matriz de 5x5 con números aleatorios (menores a 100) y muestre el total de números pares en las filas en una columna extra y en una fila adicional
@@ -779,7 +1029,5 @@ public class EjerciciosAdrian {
 
         return transpuesta;
     }
-
-
 
 }
