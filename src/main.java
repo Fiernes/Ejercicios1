@@ -46,6 +46,7 @@ public class main {
         ClinicaNutricion fiallos = new ClinicaNutricion();
         EjerciciosNataly Nataly = new EjerciciosNataly ();
         HospitalManagement Hospital = new HospitalManagement();
+        EjerciciosAbner abner  = new EjerciciosAbner();
 
         switch (numeroEjercicio) {
             case 1:
@@ -63,6 +64,9 @@ public class main {
             case 6:
                 Nataly.Aritmetica();
                 break;
+            case 7:
+                abner.jugandocon3numeros(entrada);
+                break;
             case 8:
                 Adrian.OrdenarNumeros();
                 break;
@@ -74,6 +78,9 @@ public class main {
                 break;
             case 12:
                 Nataly.ParesImpares();
+                break;
+            case 13:
+                abner.ParImpar(entrada);
                 break;
             case 14:
                 Adrian.TableroDamas();
@@ -87,6 +94,9 @@ public class main {
             case 18:
                 Nataly.Gasolina();
                 break;
+            case 19:
+                abner.gastosquenotengo(entrada);
+                break;
             case 20:
                 Adrian.CalculadoraSueldoVendedor();
                 break;
@@ -98,6 +108,9 @@ public class main {
                 break;
             case 24:
                 Nataly.ApocoHacenUno();
+                break;
+            case 25:
+                abner.triangulorecto(entrada);
                 break;
             case 26:
                 Adrian.CopiarPegar();
@@ -112,6 +125,9 @@ public class main {
             case 30:
                 Nataly.NumeroMenor();
                 break;
+            case 31:
+                abner.impar(entrada);
+                break;
             case 32:
                 Adrian.Factorial();
                 break;
@@ -123,6 +139,9 @@ public class main {
                 break;
             case 36:
                 Nataly.CuentoCincoDruidas();
+                break;
+            case 37:
+                abner.diadepago(entrada);
                 break;
             case 38:
                 Adrian.Rombo();
@@ -136,6 +155,9 @@ public class main {
             case 42:
                 Nataly.Bermudas();
                 break;
+            case 43:
+                abner.menuopciones(entrada);
+                break;
             case 44:
                 Adrian.MenuProgram();
                 break;
@@ -147,6 +169,9 @@ public class main {
                 break;
             case 48:
                 Nataly.DruidasSubenDeNivel();
+                break;
+            case 49:
+                abner.criptofuncion(entrada);
                 break;
             case 50:
                 Adrian.FiguraV2();
@@ -160,6 +185,9 @@ public class main {
             case 54:
                 Nataly.ImprimiendoLineas();
                 break;
+            case 55:
+                abner.dados(entrada);
+                break;
             case 56:
                 Adrian.AlineaNombre();
                 break;
@@ -171,6 +199,9 @@ public class main {
                 break;
             case 60:
                 Nataly.AlineaEsta(entrada);
+                break;
+            case 61:
+                abner.ejercicio61(entrada);
                 break;
             case 62:
                 Adrian.DisminuyeNum();
@@ -184,6 +215,9 @@ public class main {
             case 66:
                 Nataly.PromedioEstudiante();
                 break;
+            case 67:
+                abner.lanzamientomoneda(entrada);
+                break;
             case 68:
                 Adrian.MultiplicacionPrimaria();
                 break;
@@ -195,6 +229,9 @@ public class main {
                 break;
             case 72:
                 Nataly.CirculoNuevo();
+                break;
+            case 73:
+                abner.pancomido(entrada);
                 break;
             case 74:
                 Adrian.Elevation();
@@ -232,6 +269,9 @@ public class main {
             case 90:
                 Nataly.TeLeoVerdad();
                 break;
+            case 91:
+                abner.ejercicio91(entrada);
+                break;
             case 92:
                 Adrian.ejercicio91();
                 break;
@@ -243,6 +283,9 @@ public class main {
                 break;
             case 96:
                 Nataly.Vectores();
+                break;
+            case 97:
+                abner.matriz(entrada);
                 break;
             case 98:
                 Adrian.MatrizV2();
@@ -256,6 +299,9 @@ public class main {
             case 102:
                 Nataly.UnaDimension();
                 break;
+            case 103:
+                abner.lanzamientodado(entrada);
+                break;
             case 104:
                 Adrian.MatrizSentido();
                 break;
@@ -267,6 +313,9 @@ public class main {
                 break;
             case 108:
                 Nataly.Matriz5x5();
+                break;
+            case 109:
+                abner.ejercicio109(entrada);
                 break;
             case 110:
                 Adrian.PhdMatriz();
@@ -280,6 +329,9 @@ public class main {
             case 114:
                 Nataly.Valles();
                 break;
+            case 115:
+                abner.hospital(entrada);
+                break;
             case 116:
                 Hospital.hospital();
                 break;
@@ -288,6 +340,9 @@ public class main {
                 break;
             case 119:
                 Fidel.Clinica2(entrada);
+                break;
+            case 121:
+                //abner.registro(entrada);
                 break;
             case 122:
                 Nataly.SimpleVenta();
@@ -328,7 +383,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "Esperamos que los programas le sean de utilidad y que esté bien diseñado para satisfacer sus necesidades. " +
+                        "Esperamos que los programas le sean de utilidad y que esté bien diseñado para satisfacer sus necesidades.\n " +
                         "Agradecemos su preferencia y cualquier problema, por favor comuníquelo lo más pronto posible a nuestras oficinas.");
                 break;
             case 2:
@@ -346,7 +401,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "We hope the programs are useful to you and are well designed to meet your needs. " +
+                        "We hope the programs are useful to you and are well designed to meet your needs.\n " +
                         "Thank you for choosing our software, and please report any issues to our offices as soon as possible.");
                 break;
             case 3:
@@ -364,7 +419,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "Nous espérons que les programmes vous seront utiles et qu'ils sont bien conçus pour répondre à vos besoins. " +
+                        "Nous espérons que les programmes vous seront utiles et qu'ils sont bien conçus pour répondre à vos besoins.\n " +
                         "Nous vous remercions d'utiliser notre logiciel et nous vous prions de nous signaler tout problème dès que possible.");
                 break;
             case 4:
@@ -382,7 +437,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "Wir hoffen, dass die Programme nützlich für Sie sind und gut gestaltet sind, um Ihren Bedürfnissen gerecht zu werden. " +
+                        "Wir hoffen, dass die Programme nützlich für Sie sind und gut gestaltet sind, um Ihren Bedürfnissen gerecht zu werden. \n" +
                         "Vielen Dank für die Verwendung unserer Software, und bitte melden Sie Probleme so schnell wie möglich in unseren Büros.");
                 break;
             case 5:
@@ -400,7 +455,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "Speriamo che i programmi siano utili e ben progettati per soddisfare le vostre esigenze. " +
+                        "Speriamo che i programmi siano utili e ben progettati per soddisfare le vostre esigenze.\n " +
                         "Grazie per aver scelto il nostro software, e vi preghiamo di segnalare eventuali problemi ai nostri uffici il prima possibile.");
                 break;
             case 6:
@@ -418,7 +473,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "Esperamos que os programas sejam úteis e bem projetados para atender às suas necessidades. " +
+                        "Esperamos que os programas sejam úteis e bem projetados para atender às suas necessidades.\n " +
                         "Agradecemos por escolher nosso software e solicitamos que relatem quaisquer problemas aos nossos escritórios o mais rápido possível.");
                 break;
             case 7:
@@ -436,7 +491,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "Надеемся, что программы будут полезны и хорошо разработаны для удовлетворения ваших потребностей. " +
+                        "Надеемся, что программы будут полезны и хорошо разработаны для удовлетворения ваших потребностей.\n " +
                         "Благодарим вас за выбор нашего программного обеспечения и просим сообщать о любых проблемах в наши офисы как можно скорее.");
                 break;
             case 8:
@@ -454,7 +509,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "我们希望这些程序对您有所帮助，并且设计良好，以满足您的需求。 " +
+                        "我们希望这些程序对您有所帮助，并且设计良好，以满足您的需求。\n " +
                         "感谢您选择我们的软件，请尽快将任何问题报告给我们的办公室。");
                 break;
             case 9:
@@ -472,7 +527,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "プログラムが役立つことを願い、あなたのニーズを満たすために良く設計されています。 " +
+                        "プログラムが役立つことを願い、あなたのニーズを満たすために良く設計されています。 \n" +
                         "当社のソフトウェアを選んでいただきありがとうございます。何か問題があれば、できるだけ早く弊社にご連絡ください。");
                 break;
             case 10:
@@ -490,7 +545,7 @@ public class main {
                         "20171031307\n" +
                         "Nataly Yaneth Turcios Rios\n" +
                         "20221004636\n" +
-                        "نأمل أن تكون البرامج مفيدة لك ومصممة بشكل جيد لتلبية احتياجاتك. " +
+                        "نأمل أن تكون البرامج مفيدة لك ومصممة بشكل جيد لتلبية احتياجاتك. \n" +
                         "نشكرك على اختيار برنامجنا، ويرجى الإبلاغ عن أي مشاكل إلى مكاتبنا في أقرب وقت ممكن.");
                 break;
             default:

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+@SuppressWarnings("ALL")
 public class EjerciciosAbner {
     private static final int NUM_LANCES = 100;
     private static final int CREDITO_INICIAL = 1000;
@@ -318,7 +319,7 @@ public class EjerciciosAbner {
     }
 
     // Menú principal
-      public static void mostrar_Menu() {
+    public static void mostrar_Menu() {
         System.out.println("\n**Sistema de gestión de habitaciones: Hospital General de Latveria**");
         System.out.println("------------------------------------------------------------------");
         System.out.println("1. Consultar habitaciones libres por especialidad");
@@ -378,135 +379,42 @@ public class EjerciciosAbner {
         return null;
     }
 
-    private static void mostrarExpedientes() {
-    }
-
-    private static void mostrarEstadisticasInternosPorEspecialidad() {
-    }
-
-    private static void internarPaciente() {
-    }
-
-    private static void darAltaPaciente() {
-    }
-
-    // Menú principal
-    private static void mostrarMenu() {
-        System.out.println("\n**Sistema de gestión de expedientes de pacientes**");
-        System.out.println("--------------------------------------------------");
-        System.out.println("1. Agregar expediente");
-        System.out.println("2. Modificar expediente");
-        System.out.println("3. Dar de alta paciente");
-        System.out.println("4. Internarse en el hospital");
-        System.out.println("5. Mostrar estadísticas de pacientes internos por especialidad");
-        System.out.println("6. Mostrar todos los expedientes");
-        System.out.println("0. Salir");
-        System.out.print("Ingrese la opción deseada: ");
-    }
-
-    // Agregar expediente
-    private static <ExpedientePaciente> void agregarExpediente() {
-        // Crear un nuevo objeto ExpedientePaciente
-        ExpedientePaciente expediente = new ExpedientePaciente();
-
-
-        // Solicitar datos al usuario
-        System.out.print("Ingrese el primer nombre: ");
-        expediente.toString();
-
-        System.out.print("Ingrese el primer apellido: ");
-        expediente.toString();
-
-        System.out.print("Ingrese el celular (dígitos solamente): ");
-        expediente.getClass();
-
-        System.out.print("Ingrese el sexo (M/F): ");
-        expediente.toString();
-
-        System.out.print("Ingrese el peso (en kg): ");
-        expediente.toString();
-
-        System.out.print("Ingrese la estatura (en cm): ");
-        expediente.getClass();
-
-        expediente.getClass();
-
-        System.out.print("Ingrese el diagnóstico: ");
-        expediente.toString();
-
-        // Agregar el expediente a la lista
-        expediente.toString();
-
-        System.out.println("\nExpediente agregado exitosamente.");
-    }
-
-    // Modificar expediente
-    private static <ExpedientePaciente> void modificarExpediente() {
-        System.out.print("Ingrese el número de expediente a modificar: ");
-        sc.nextInt();
-
-        ExpedientePaciente expediente = buscarExpediente();
-        if (expediente == null) {
-            System.out.println("Expediente no encontrado.");
-            return;
-        }
-
-        System.out.println("\nDatos actuales del paciente:");
-        mostrarDatosExpediente();
-
-        System.out.print("\n¿Desea modificar alguno de estos datos? (S/N): ");
-        String respuesta = sc.next().toUpperCase();
-        if (!respuesta.equals("S")) {
-            return;
-        }
-
-
-        System.out.print("Ingrese la nueva estatura (en cm) (o presione Enter para no modificar): ");{
-        }
-    }
-
-    private static void mostrarDatosExpediente() {
-    }
-
-    private static <ExpedientePaciente> ExpedientePaciente buscarExpediente() {
-        return null;
-    }
 
     /*
     7. Jugando con tres números: Escriba un programa que reciba tres enteros del teclado e imprima la suma, promedi
     o, producto, menor y mayor de esos números.
     El diálogo de la pantalla debe aparecer de la siguiente manera
     */
-public void jugandocon3numeros(Scanner entrada) {
+    public void jugandocon3numeros(Scanner entrada) {
 
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-    // Se solicitan los tres números al usuario
-    System.out.print("Ingrese el primer número: ");
-    double num1 = sc.nextDouble();
+        // Se solicitan los tres números al usuario
+        System.out.print("Ingrese el primer número: ");
+        double num1 = sc.nextDouble();
 
-    System.out.print("Ingrese el segundo número: ");
-    double num2 = sc.nextDouble();
+        System.out.print("Ingrese el segundo número: ");
+        double num2 = sc.nextDouble();
 
-    System.out.print("Ingrese el tercer número: ");
-    double num3 = sc.nextDouble();
+        System.out.print("Ingrese el tercer número: ");
+        double num3 = sc.nextDouble();
 
-    // Se calculan la suma, el promedio y el producto
-    double suma = num1 + num2 + num3;
-    double promedio = suma / 3;
-    double producto = num1 * num2 * num3;
+        // Se calculan la suma, el promedio y el producto
+        double suma = num1 + num2 + num3;
+        double promedio = suma / 3;
+        double producto = num1 * num2 * num3;
 
-    // Se identifican el menor y el mayor número
-    double menor = Math.min(num1, Math.min(num2, num3));
-    double mayor = Math.max(num1, Math.max(num2, num3));
+        // Se identifican el menor y el mayor número
+        double menor = Math.min(num1, Math.min(num2, num3));
+        double mayor = Math.max(num1, Math.max(num2, num3));
 
-    // Se muestran los resultados al usuario
-    System.out.println("\nSuma: " + suma);
-    System.out.println("Promedio: " + promedio);
-    System.out.println("Producto: " + producto);
-    System.out.println("Menor número: " + menor);
-    System.out.println("Mayor número: " + mayor);
-}
+        // Se muestran los resultados al usuario
+        System.out.println("\nSuma: " + suma);
+        System.out.println("Promedio: " + promedio);
+        System.out.println("Producto: " + producto);
+        System.out.println("Menor número: " + menor);
+        System.out.println("Mayor número: " + mayor);
+    }
     /*
     13. Par o impar: Escriba un programa que lea un entero
     y que determine e imprima si es impar o par
@@ -515,26 +423,26 @@ public void jugandocon3numeros(Scanner entrada) {
     public void ParImpar(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
 
-            // Se solicita el número entero al usuario
-            System.out.print("Ingrese un número entero: ");
-            int numero = sc.nextInt();
+        // Se solicita el número entero al usuario
+        System.out.print("Ingrese un número entero: ");
+        int numero = sc.nextInt();
 
-            // Se determina si el número es par o impar
-            if (numero % 2 == 0) {
-                System.out.println(numero + " es un número par");
-            } else {
-                System.out.println(numero + " es un número impar");
-            }
+        // Se determina si el número es par o impar
+        if (numero % 2 == 0) {
+            System.out.println(numero + " es un número par");
+        } else {
+            System.out.println(numero + " es un número impar");
+        }
     }
-/*
-19. Gasto lo que no tengo: Desarrolle una aplicación en JAVA que determine si alguno de los clientes de una tienda de departamentos se ha excedido del límite de crédito en una cuenta. Para cada cliente se tienen los siguientes datos:
-a. Número de cuenta (un entero)
-b. Saldo al inicio del mes
-c. Total de todos los artículos cargados por el cliente en el mes
-d. Total de todos los créditos aplicados a la cuenta del cliente en el mes
- e. Límite de crédito permitido.
+    /*
+    19. Gasto lo que no tengo: Desarrolle una aplicación en JAVA que determine si alguno de los clientes de una tienda de departamentos se ha excedido del límite de crédito en una cuenta. Para cada cliente se tienen los siguientes datos:
+    a. Número de cuenta (un entero)
+    b. Saldo al inicio del mes
+    c. Total de todos los artículos cargados por el cliente en el mes
+    d. Total de todos los créditos aplicados a la cuenta del cliente en el mes
+     e. Límite de crédito permitido.
 
- */
+     */
     public void gastosquenotengo(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
 
@@ -635,12 +543,12 @@ y que determine e imprima si podrían ser los lados de un triángulo recto
             System.out.println("No, no podrían ser los lados de un triángulo rectángulo.");
         }
     }
-/*
-31. No pases de 15: Escriba un programa que utilice una instrucción for para calcular e imprimir
-el producto de los enteros impares del 1 al 15
+    /*
+    31. No pases de 15: Escriba un programa que utilice una instrucción for para calcular e imprimir
+    el producto de los enteros impares del 1 al 15
 
 
- */
+     */
     public void impar(Scanner entrada) {
 
         int producto = 1;
@@ -656,19 +564,19 @@ el producto de los enteros impares del 1 al 15
 
         System.out.println("El producto de los números impares del 1 al 15 es: " + producto);
     }
-/*
-Día de pago: Una empresa paga a sus empleados como gerentes (quienes reciben un salario semanal fijo),
-trabajadores por horas (que reciben un sueldo fi jo por hora para las primeras 40 horas que trabajen y
- “tiempo y medio”, 1.5 veces su sueldo por horas, para las horas extra trabajadas), empleados por comisión
- (que reciben $250 más 5.7 por ciento de sus ventas totales por semana), o trabajadores por piezas (que reciben una
- cantidad fi ja de dinero por cada artículo que producen; cada trabajador por piezas en esta empresa trabaja sólo en un tipo de artículo). Escriba un programa para calcular el sueldo semanal para cada empleado. No necesita saber cuántos empleados hay de antemano. Cada tipo de empleado tiene
-  su propio código de pago: los gerentes tienen el código 1, los trabajadores por horas tienen
- el código 2, los trabajadores por comisión tienen el código 3 y los trabajadores por piezas tienen el código
- 4. Use una instrucción switch para calcular el sueldo de cada empleado, de acuerdo con el código de pago de cada uno. Dentro del switch, pida al usuario (es decir, el cajero de nóminas) que introduzca los hechos apropiados que su programa necesita para
- calcular el sueldo de cada empleado, de acuerdo con su código de pago
+    /*
+    Día de pago: Una empresa paga a sus empleados como gerentes (quienes reciben un salario semanal fijo),
+    trabajadores por horas (que reciben un sueldo fi jo por hora para las primeras 40 horas que trabajen y
+     “tiempo y medio”, 1.5 veces su sueldo por horas, para las horas extra trabajadas), empleados por comisión
+     (que reciben $250 más 5.7 por ciento de sus ventas totales por semana), o trabajadores por piezas (que reciben una
+     cantidad fi ja de dinero por cada artículo que producen; cada trabajador por piezas en esta empresa trabaja sólo en un tipo de artículo). Escriba un programa para calcular el sueldo semanal para cada empleado. No necesita saber cuántos empleados hay de antemano. Cada tipo de empleado tiene
+      su propio código de pago: los gerentes tienen el código 1, los trabajadores por horas tienen
+     el código 2, los trabajadores por comisión tienen el código 3 y los trabajadores por piezas tienen el código
+     4. Use una instrucción switch para calcular el sueldo de cada empleado, de acuerdo con el código de pago de cada uno. Dentro del switch, pida al usuario (es decir, el cajero de nóminas) que introduzca los hechos apropiados que su programa necesita para
+     calcular el sueldo de cada empleado, de acuerdo con su código de pago
 
 
- */
+     */
     public void diadepago (Scanner entrada) {
         Scanner sc = new Scanner(System.in);
 
@@ -729,12 +637,12 @@ trabajadores por horas (que reciben un sueldo fi jo por hora para las primeras 4
             }
         }
     }
-/*
-43. Hagamos un menú: Vamos a hacer un programa que muestre un menú llamando a una función que presenta las opciones al usuario y devuelve la opción elegida considere:
-a. Mostrar mínimo cinco opciones.
-b. Validar la entrada de opciones válidas.
-c. No se puede mostrar o validar nada desde el main, todo debe hacerse desde la función.
- */
+    /*
+    43. Hagamos un menú: Vamos a hacer un programa que muestre un menú llamando a una función que presenta las opciones al usuario y devuelve la opción elegida considere:
+    a. Mostrar mínimo cinco opciones.
+    b. Validar la entrada de opciones válidas.
+    c. No se puede mostrar o validar nada desde el main, todo debe hacerse desde la función.
+     */
     public void menuopciones(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
 
@@ -762,12 +670,12 @@ c. No se puede mostrar o validar nada desde el main, todo debe hacerse desde la 
                 System.out.println("Opción no válida.");
         }
     }
-/*
+    /*
 
-49. Cripto-funciones: Tomaremos como base el
-ejercicio “Criptografía” de esta guía, vamos ahora a hacer que codificar y decodificar sean funciones.
+    49. Cripto-funciones: Tomaremos como base el
+    ejercicio “Criptografía” de esta guía, vamos ahora a hacer que codificar y decodificar sean funciones.
 
- */
+     */
     public void criptofuncion(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
 
@@ -802,19 +710,19 @@ ejercicio “Criptografía” de esta guía, vamos ahora a hacer que codificar y
 
         System.out.println(resultado);
     }
-/*
+    /*
 
-55. El dado está en el aire: Haciendo uso de las clases en JAVA con prestaciones similares a las stdlib y time de C++ vamos a hacer un programa que sirva para, usando funciones, jugar un pequeño juego con dados. Al comenzar la partida el usuario tiene un crédito
- de L. 1000.00 y se le pide ingresar una pequeña apuesta
-(de entre 1 y su cantidad de dinero) luego se le explica que se van a lanzar dos datos y el
- tiene que adivinar qué cifra se obtiene al sumar las caras superiores de los dados (de entre 2 y 12) entonces el programa lanza los dados y los muestra en pantalla (si, dibuja dos cuadrados con los puntos correspondientes
- a los valores obtenidos en la tirada) seguido de un mensaje que nos retroalimenta sobre
-  si el usuario ha ganado o perdido, si ha ganado se le regresa lo que apostó más
- la mitad de ese valor si pierde no se le dá nada.
- El juego debe parar cuando el usuario se quede sin dinero o, si ya ha jugado al menos cinco (5) veces y no ha perdido todo decida retirarse.
-Lanzar los dados, sumar los dados, dibujar dados, cálculo de ganancia serán las funciones obligatorias en el programa. (Si, se puede dibujar un dado sobre otro o en una función uno a la par del otro)
+    55. El dado está en el aire: Haciendo uso de las clases en JAVA con prestaciones similares a las stdlib y time de C++ vamos a hacer un programa que sirva para, usando funciones, jugar un pequeño juego con dados. Al comenzar la partida el usuario tiene un crédito
+     de L. 1000.00 y se le pide ingresar una pequeña apuesta
+    (de entre 1 y su cantidad de dinero) luego se le explica que se van a lanzar dos datos y el
+     tiene que adivinar qué cifra se obtiene al sumar las caras superiores de los dados (de entre 2 y 12) entonces el programa lanza los dados y los muestra en pantalla (si, dibuja dos cuadrados con los puntos correspondientes
+     a los valores obtenidos en la tirada) seguido de un mensaje que nos retroalimenta sobre
+      si el usuario ha ganado o perdido, si ha ganado se le regresa lo que apostó más
+     la mitad de ese valor si pierde no se le dá nada.
+     El juego debe parar cuando el usuario se quede sin dinero o, si ya ha jugado al menos cinco (5) veces y no ha perdido todo decida retirarse.
+    Lanzar los dados, sumar los dados, dibujar dados, cálculo de ganancia serán las funciones obligatorias en el programa. (Si, se puede dibujar un dado sobre otro o en una función uno a la par del otro)
 
- */
+     */
     public void dados (Scanner entrada) {
         // Constantes
         final int NUMERO_SIMULACIONES = 36000; // Número de lanzamientos de dados
@@ -842,12 +750,12 @@ Lanzar los dados, sumar los dados, dibujar dados, cálculo de ganancia serán la
             System.out.println(suma + "\t" + frecuenciasSumas[suma - MIN_SUMA]);
         }
     }
-/*
-61. Dibujando como se debe: Use técnicas similares a las desarrolladas en los ejercicios “Figuras v2” y
-“Alinea ésta” para producir un programa que grafique un amplio rango de figuras (triángulo alineado a la izquierda,
-a la derecha, estilo pirámide, rombo, cuadrado vacío, cuadrado lleno, triángulo invertido alineado a la izquierda, triángulo
-invertido alineado a la derecha y triángulo estilo pirámide invertida) cada figura es una función distinta.
- */
+    /*
+    61. Dibujando como se debe: Use técnicas similares a las desarrolladas en los ejercicios “Figuras v2” y
+    “Alinea ésta” para producir un programa que grafique un amplio rango de figuras (triángulo alineado a la izquierda,
+    a la derecha, estilo pirámide, rombo, cuadrado vacío, cuadrado lleno, triángulo invertido alineado a la izquierda, triángulo
+    invertido alineado a la derecha y triángulo estilo pirámide invertida) cada figura es una función distinta.
+     */
     public void ejercicio61(Scanner entrada) {
         // Example usage of the shape drawing functions
         System.out.println("Triángulo alineado a la izquierda:");
@@ -877,15 +785,15 @@ invertido alineado a la derecha y triángulo estilo pirámide invertida) cada fi
         System.out.println("\nTriángulo estilo pirámide invertida:");
         dibujarTrianguloPiramideInvertida(5);
     }
-/*
-67. Toss a coin: Escriba un programa que simule el lanzamiento de monedas. Cada vez que se lance la moneda,
-el programa debe imprimir Cara o Cruz. Deje que el programa lance la moneda 100 veces y cuente el número de
-veces que aparezca cada uno de los lados de la moneda. Imprima los resultados. El programa debe llamar a un método separado,
-llamado tirar, que no reciba argumentos y devuelva 0 en caso de cara y 1 en caso de cruz.
-[Nota: si el programa simula en forma realista el lanzamiento de monedas, cada lado de
-la moneda debe aparecer aproximadamente la mitad del tiempo].
+    /*
+    67. Toss a coin: Escriba un programa que simule el lanzamiento de monedas. Cada vez que se lance la moneda,
+    el programa debe imprimir Cara o Cruz. Deje que el programa lance la moneda 100 veces y cuente el número de
+    veces que aparezca cada uno de los lados de la moneda. Imprima los resultados. El programa debe llamar a un método separado,
+    llamado tirar, que no reciba argumentos y devuelva 0 en caso de cara y 1 en caso de cruz.
+    [Nota: si el programa simula en forma realista el lanzamiento de monedas, cada lado de
+    la moneda debe aparecer aproximadamente la mitad del tiempo].
 
- */
+     */
     public void lanzamientomoneda(Scanner entrada) {
         Random random = new Random();
 
@@ -907,13 +815,13 @@ la moneda debe aparecer aproximadamente la mitad del tiempo].
         System.out.println("Número de caras: " + numeroCaras);
         System.out.println("Número de cruces: " + numeroCruces);
     }
-/*
+    /*
 
-73. Pan comido: Escriba un programa completo en JAVA con las dos funciones alternativas que se especifican a continuación, de las cuales cada una simplemente triplica la variable cuenta definida en main. Después compare y contraste ambos métodos. Estas dos funciones son:
- a. la función triplicarPorValor, que pasa una copia de cuenta por valor, triplica la copia y devuelve el nuevo valor, y
-b. la función triplicarPorReferencia, que pasa cuenta por referencia a través de un parámetro por referencia y triplica el valor original de cuenta a través de su alias (es decir, el parámetro por referencia).
+    73. Pan comido: Escriba un programa completo en JAVA con las dos funciones alternativas que se especifican a continuación, de las cuales cada una simplemente triplica la variable cuenta definida en main. Después compare y contraste ambos métodos. Estas dos funciones son:
+     a. la función triplicarPorValor, que pasa una copia de cuenta por valor, triplica la copia y devuelve el nuevo valor, y
+    b. la función triplicarPorReferencia, que pasa cuenta por referencia a través de un parámetro por referencia y triplica el valor original de cuenta a través de su alias (es decir, el parámetro por referencia).
 
- */
+     */
     public void pancomido(Scanner entrada) {
         int cuenta = 5;
 
@@ -925,13 +833,13 @@ b. la función triplicarPorReferencia, que pasa cuenta por referencia a través 
 
         System.out.println("Valor final de cuenta: " + cuenta); // 5 (sin cambios)
     }
-/*
+    /*
 
-91. Te leo, te pongo atención y te supero: Modifique el programa “Te leo y te pongo atención” para que
- la tabla muestre además las columnas “cuadrado”y “cubo” todos los valores de estas columnas corresponden al cuadrado y a cubo de
-cada número en la columna valor y deben ser calculados sin usar la función POW() (usted debe programar esas funciones).
+    91. Te leo, te pongo atención y te supero: Modifique el programa “Te leo y te pongo atención” para que
+     la tabla muestre además las columnas “cuadrado”y “cubo” todos los valores de estas columnas corresponden al cuadrado y a cubo de
+    cada número en la columna valor y deben ser calculados sin usar la función POW() (usted debe programar esas funciones).
 
- */
+     */
     public void ejercicio91(Scanner entrada) {
         new Scanner(System.in);
 
@@ -951,12 +859,12 @@ cada número en la columna valor y deben ser calculados sin usar la función POW
             System.out.println(numerosClave[i] + "\t\t" + (posicionLista + 1) + "\t" + valor + "\t" + cuadrado + "\t" + cubo);
         }
     }
-/*
-97. Matriz: Haga un programa que solicite al usuario dos números enteros M y N entre 2 y 5, crear una
-matriz MxN y primero inicializarla en cero, mandarla a imprimir, luego sustituir las filas impares por números
-aleatorios y mandarla a imprimir, finalmente sustituir
- las columnas pares y mandar a imprimir la matriz en este estado final. (los números aleatorios menores que 80)
- */
+    /*
+    97. Matriz: Haga un programa que solicite al usuario dos números enteros M y N entre 2 y 5, crear una
+    matriz MxN y primero inicializarla en cero, mandarla a imprimir, luego sustituir las filas impares por números
+    aleatorios y mandarla a imprimir, finalmente sustituir
+     las columnas pares y mandar a imprimir la matriz en este estado final. (los números aleatorios menores que 80)
+     */
     public void matriz(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
@@ -1012,17 +920,17 @@ aleatorios y mandarla a imprimir, finalmente sustituir
         System.out.println("\nMatriz final:");
         imprimirMatriz(matriz);
     }
-/*
-103. Emprendiendo para casinos: Escriba un programa para simular el tiro de dos dados.
-El programa debe utilizar rand para tirar el primer dado, y de nuevo para tirar el segundo dado.
- Después debe calcularse la suma de los dos valores. [Nota: cada dado puede mostrar un valor entero del
-  1 al 6, por lo que la suma de los valores variará del 2 al 12, siendo 7 la suma más frecuente, mientras
-  que 2 y 12 serán las sumas menos frecuentes]. En la figura 7.32 se muestran las 36 posibles combinaciones
-  de los dos dados. Su programa debe tirar los dados 36,000 veces. Utilice un arreglo unidimensional para registrar
-   el número de veces que aparezca cada una de las posibles sumas. Imprima los resultados en formato tabular.
- Determine además si los totales son razonables
-(es decir, hay seis formas de tirar un 7, por lo que aproximadamente una sexta parte de los tiros deben ser 7)
-*/
+    /*
+    103. Emprendiendo para casinos: Escriba un programa para simular el tiro de dos dados.
+    El programa debe utilizar rand para tirar el primer dado, y de nuevo para tirar el segundo dado.
+     Después debe calcularse la suma de los dos valores. [Nota: cada dado puede mostrar un valor entero del
+      1 al 6, por lo que la suma de los valores variará del 2 al 12, siendo 7 la suma más frecuente, mientras
+      que 2 y 12 serán las sumas menos frecuentes]. En la figura 7.32 se muestran las 36 posibles combinaciones
+      de los dos dados. Su programa debe tirar los dados 36,000 veces. Utilice un arreglo unidimensional para registrar
+       el número de veces que aparezca cada una de las posibles sumas. Imprima los resultados en formato tabular.
+     Determine además si los totales son razonables
+    (es decir, hay seis formas de tirar un 7, por lo que aproximadamente una sexta parte de los tiros deben ser 7)
+    */
     public void lanzamientodado(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
@@ -1061,12 +969,12 @@ El programa debe utilizar rand para tirar el primer dado, y de nuevo para tirar 
         System.out.println("\n** Fin del juego. **");
         System.out.printf("Crédito final: L%.2f\n", credito);
     }
-/*
-109. Maestro en matrices: Pedir al usuario que ingrese un número mayor a 2 y menor a 15,
-con ese número crear una matriz cuadrada y llenarla con números
- positivos impares (generados con una función) entonces una vez llena la matriz mostrarla
-  (usando una función para eso)
- */
+    /*
+    109. Maestro en matrices: Pedir al usuario que ingrese un número mayor a 2 y menor a 15,
+    con ese número crear una matriz cuadrada y llenarla con números
+     positivos impares (generados con una función) entonces una vez llena la matriz mostrarla
+      (usando una función para eso)
+     */
     public void ejercicio109(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
@@ -1087,48 +995,48 @@ con ese número crear una matriz cuadrada y llenarla con números
         // Mostrar matriz
         mostrarMatriz(matriz);
     }
-/*
+    /*
 
-115. Sistema de salud de Latveria: El hospital general de Latveria cuenta con las siguientes 4
-especialidades:
-a. Cirugía general.
-b. Ginecología y obstetricia.
-c. Medicina interna y
-d. Nefrología.
-Estas especialidades comparten un edificio y cada una de ellas tiene asignado un tres pisos de esta
-forma:
-Especialidad Pisos Asignados
-Cirugía general 2, 3, 4
-Ginecología y
-obstetricia
-5, 6, 7
-Medicina interna 8, 9, 10
-Nefrología 11, 12, 13
-Además cada uno de los pisos posee diez habitaciones las cuales pueden estar libres u ocupadas.
-Se debe hacer un programa para gestionar estas habitaciones con las siguientes opciones:
-1. Consultar habitaciones libres por especialidad: El encargado elige la especialidad
-y el sistema muestra por cada piso las habitaciones indicando cuales están vacías y
-cuáles están ocupadas (no dice quién la ocupa).
-2. Consultar habitaciones por piso: Se puede no solo ver el resumen del inciso 1 sino
-que se debe programar la opción de poder elegir especialidad seguido de uno de los
-tres pisos y entonces mostrar una matriz donde se vea el piso y sus habitaciones,
-donde las habitaciones libres estarán vacías pero las ocupadas mostrarán el número
-del expediente del paciente que la ocupa.
-3. Asignar habitación: Poder en cualquier habitación independiente del piso y la
-especialidad asignar un paciente, esto se logra facilitando luego del habitación el
-número de expediente del paciente, número conformado por a lo más tres cifras.
-Obviamente solo pueden asignarse habitaciones vacías.
-4. Liberar habitación: Una vez que el paciente se ha dado de alta es necesario indicar
-que la habitación queda libre para poder asignarse.
-5. Mostrar tabla de habitaciones ocupadas:
-Especialidad | piso | Habitación | Paciente
-Solo usar número para las habitaciones, las especialidades saldrán con nombre y los pisos son
-números ordinales por lo que deberá aparecer su respectivo cardinal (usar función para obtenerla)
-Nota: Debe usar una matriz de tres dimensiones para representar el hospital con sus
-especialidades, piso y habitaciones.
+    115. Sistema de salud de Latveria: El hospital general de Latveria cuenta con las siguientes 4
+    especialidades:
+    a. Cirugía general.
+    b. Ginecología y obstetricia.
+    c. Medicina interna y
+    d. Nefrología.
+    Estas especialidades comparten un edificio y cada una de ellas tiene asignado un tres pisos de esta
+    forma:
+    Especialidad Pisos Asignados
+    Cirugía general 2, 3, 4
+    Ginecología y
+    obstetricia
+    5, 6, 7
+    Medicina interna 8, 9, 10
+    Nefrología 11, 12, 13
+    Además cada uno de los pisos posee diez habitaciones las cuales pueden estar libres u ocupadas.
+    Se debe hacer un programa para gestionar estas habitaciones con las siguientes opciones:
+    1. Consultar habitaciones libres por especialidad: El encargado elige la especialidad
+    y el sistema muestra por cada piso las habitaciones indicando cuales están vacías y
+    cuáles están ocupadas (no dice quién la ocupa).
+    2. Consultar habitaciones por piso: Se puede no solo ver el resumen del inciso 1 sino
+    que se debe programar la opción de poder elegir especialidad seguido de uno de los
+    tres pisos y entonces mostrar una matriz donde se vea el piso y sus habitaciones,
+    donde las habitaciones libres estarán vacías pero las ocupadas mostrarán el número
+    del expediente del paciente que la ocupa.
+    3. Asignar habitación: Poder en cualquier habitación independiente del piso y la
+    especialidad asignar un paciente, esto se logra facilitando luego del habitación el
+    número de expediente del paciente, número conformado por a lo más tres cifras.
+    Obviamente solo pueden asignarse habitaciones vacías.
+    4. Liberar habitación: Una vez que el paciente se ha dado de alta es necesario indicar
+    que la habitación queda libre para poder asignarse.
+    5. Mostrar tabla de habitaciones ocupadas:
+    Especialidad | piso | Habitación | Paciente
+    Solo usar número para las habitaciones, las especialidades saldrán con nombre y los pisos son
+    números ordinales por lo que deberá aparecer su respectivo cardinal (usar función para obtenerla)
+    Nota: Debe usar una matriz de tres dimensiones para representar el hospital con sus
+    especialidades, piso y habitaciones.
 
 
- */
+     */
     public void hospital(Scanner entrada) {
         Scanner sc = new Scanner(System.in);
 
@@ -1160,8 +1068,6 @@ especialidades, piso y habitaciones.
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
         } while (opcion != 0);
-
-        sc.close();
     }
 
     private void MostrarMenu() {
@@ -1171,95 +1077,189 @@ especialidades, piso y habitaciones.
     121. Registro V2: Vamos bien, muy satisfecho con sus avances, vamos a hacer con el ejercicio “Registros” lo que hizo con la clínica para ir mejorando; es decir, agregar expedientes de pacientes, pero este expediente no solo guarda el diagnóstico del peso sino la especialidad que lo está atendiendo y si está o no interno en el hospital, si está interno en que cama de qué habitación de qué piso. Uno puede modificar celular, estatura, peso y ahora:
      1. Si está interno darle de alta, eso significa borrar la información de cama, habitación, piso y especialidad.
     2. Si no está interno entonces puede internarse y agregar para ello especialidad, piso, habitación y cama. Ahora las estadísticas muestran pacientes internos por especialidad.
-
+    
     */
-    public void registro(Scanner entrada) {
-        int opcion;
-        do {
+    public static class ExpedientePaciente {
+        public void registro(Scanner entrada) {
+            int opcion;
+            do {
 
-            mostrarmenu();
-            opcion = sc.nextInt();
+                mostrarmenu();
+                opcion = sc.nextInt();
 
-            switch (opcion) {
-                case 1:
-                    agregarExpediente();
-                    break;
-                case 2:
-                    modificarExpediente();
-                    break;
-                case 3:
-                    darAltaPaciente();
-                    break;
-                case 4:
-                    internarPaciente();
-                    break;
-                case 5:
-                    mostrarEstadisticasInternosPorEspecialidad();
-                    break;
-                case 6:
-                    mostrarExpedientes();
-                    break;
-                case 0:
-                    System.out.println("Saliendo del sistema...");
-                    break;
-                default:
-                    System.out.println("Opción no válida. Intente nuevamente.");
+                switch (opcion) {
+                    case 1:
+                        agregarExpediente();
+                        break;
+                    case 2:
+                        modificarExpediente();
+                        break;
+                    case 3:
+                        darAltaPaciente();
+                        break;
+                    case 4:
+                        internarPaciente();
+                        break;
+                    case 5:
+                        mostrarEstadisticasInternosPorEspecialidad();
+                        break;
+                    case 6:
+                        mostrarExpedientes();
+                        break;
+                    case 0:
+                        System.out.println("Saliendo del sistema...");
+                        break;
+                    default:
+                        System.out.println("Opción no válida. Intente nuevamente.");
+                }
+            } while (opcion != 0);
+        }
+
+        private static void mostrarExpedientes() {
+        }
+
+        private static void mostrarEstadisticasInternosPorEspecialidad() {
+        }
+
+        private static void internarPaciente() {
+        }
+
+        private static void darAltaPaciente() {
+        }
+
+        // Menú principal
+        private static void mostrarMenu() {
+            System.out.println("\n**Sistema de gestión de expedientes de pacientes**");
+            System.out.println("--------------------------------------------------");
+            System.out.println("1. Agregar expediente");
+            System.out.println("2. Modificar expediente");
+            System.out.println("3. Dar de alta paciente");
+            System.out.println("4. Internarse en el hospital");
+            System.out.println("5. Mostrar estadísticas de pacientes internos por especialidad");
+            System.out.println("6. Mostrar todos los expedientes");
+            System.out.println("0. Salir");
+            System.out.print("Ingrese la opción deseada: ");
+        }
+
+        // Agregar expediente
+        private static void agregarExpediente() {
+            // Crear un nuevo objeto ExpedientePaciente
+            ExpedientePaciente expediente = new ExpedientePaciente();
+
+
+            // Solicitar datos al usuario
+            System.out.print("Ingrese el primer nombre: ");
+            expediente.toString();
+
+            System.out.print("Ingrese el primer apellido: ");
+            expediente.toString();
+
+            System.out.print("Ingrese el celular (dígitos solamente): ");
+            expediente.getClass();
+
+            System.out.print("Ingrese el sexo (M/F): ");
+            expediente.toString();
+
+            System.out.print("Ingrese el peso (en kg): ");
+            expediente.toString();
+
+            System.out.print("Ingrese la estatura (en cm): ");
+            expediente.getClass();
+
+            expediente.getClass();
+
+            System.out.print("Ingrese el diagnóstico: ");
+            expediente.toString();
+
+            // Agregar el expediente a la lista
+            expediente.toString();
+
+            System.out.println("\nExpediente agregado exitosamente.");
+        }
+
+        // Modificar expediente
+        private static <ExpedientePaciente> void modificarExpediente() {
+            System.out.print("Ingrese el número de expediente a modificar: ");
+            sc.nextInt();
+
+            ExpedientePaciente expediente = buscarExpediente();
+            if (expediente == null) {
+                System.out.println("Expediente no encontrado.");
+                return;
             }
-        } while (opcion != 0);
-    }
 
-    private void mostrarmenu() {
-    }
+            System.out.println("\nDatos actuales del paciente:");
+            mostrarDatosExpediente();
 
-    public  void lanzardados(Scanner entrada) {
-        // Constantes
-        final int CANTIDAD_SIMULACIONES = 36000; // Número de lanzamientos de dados a realizar
-        final int[] resultados = new int[12]; // Array para almacenar la frecuencia de cada suma
+            System.out.print("\n¿Desea modificar alguno de estos datos? (S/N): ");
+            String respuesta = sc.next().toUpperCase();
+            if (!respuesta.equals("S")) {
+                return;
+            }
 
-        // Simulación de lanzamientos
-        Random random = new Random();
-        for (int i = 0; i < CANTIDAD_SIMULACIONES; i++) {
-            int dado1 = random.nextInt(6) + 1; // Lanzamiento del primer dado
-            int dado2 = random.nextInt(6) + 1; // Lanzamiento del segundo dado
-            int suma = dado1 + dado2;
 
-            resultados[suma - 2]++; // Incrementar el contador para la suma obtenida
-        }
-
-        // Mostrar resultados
-        System.out.println("\nResultados de " + CANTIDAD_SIMULACIONES + " lanzamientos de dados:");
-        System.out.println("Suma\tFrecuencia\tProbabilidad Esperada\tPorcentaje Real");
-        System.out.println("----\t---------\t---------------------\t--------------");
-
-        for (int i = 2; i <= 12; i++) {
-            double probabilidadEsperada = (double) i / 36; // Probabilidad teórica para cada suma
-            double porcentajeReal = (double) resultados[i - 2] / CANTIDAD_SIMULACIONES * 100;
-
-            System.out.println(i + "\t" + resultados[i - 2] + "\t\t" +
-                    String.format("%.4f", probabilidadEsperada) + "\t\t" +
-                    String.format("%.2f%%", porcentajeReal));
-        }
-
-        // Análisis de resultados
-        System.out.println("\nAnálisis de resultados:");
-        boolean resultadosRazonables = true;
-
-        for (int i = 2; i <= 12; i++) {
-            if (Math.abs(resultados[i - 2] - (CANTIDAD_SIMULACIONES / 6)) > CANTIDAD_SIMULACIONES * 0.05) {
-                resultadosRazonables = false;
-                System.out.println("La suma " + i + " no se aproxima a la probabilidad esperada (esperado: ~1/6, real: " +
-                        String.format("%.2f%%", (double) resultados[i - 2] / CANTIDAD_SIMULACIONES * 100) + ")");
-                break;
+            System.out.print("Ingrese la nueva estatura (en cm) (o presione Enter para no modificar): ");{
             }
         }
 
-        if (resultadosRazonables) {
-            System.out.println("Los resultados son razonables. Se observa una distribución relativamente uniforme de las sumas, " +
-                    "con una ligera variabilidad aleatoria esperada.");
+        private static void mostrarDatosExpediente() {
+        }
+
+        private static <ExpedientePaciente> ExpedientePaciente buscarExpediente() {
+            return null;
+        }
+        private void mostrarmenu() {
+        }
+
+        public  void lanzardados(Scanner entrada) {
+            // Constantes
+            final int CANTIDAD_SIMULACIONES = 36000; // Número de lanzamientos de dados a realizar
+            final int[] resultados = new int[12]; // Array para almacenar la frecuencia de cada suma
+
+            // Simulación de lanzamientos
+            Random random = new Random();
+            for (int i = 0; i < CANTIDAD_SIMULACIONES; i++) {
+                int dado1 = random.nextInt(6) + 1; // Lanzamiento del primer dado
+                int dado2 = random.nextInt(6) + 1; // Lanzamiento del segundo dado
+                int suma = dado1 + dado2;
+
+                resultados[suma - 2]++; // Incrementar el contador para la suma obtenida
+            }
+
+            // Mostrar resultados
+            System.out.println("\nResultados de " + CANTIDAD_SIMULACIONES + " lanzamientos de dados:");
+            System.out.println("Suma\tFrecuencia\tProbabilidad Esperada\tPorcentaje Real");
+            System.out.println("----\t---------\t---------------------\t--------------");
+
+            for (int i = 2; i <= 12; i++) {
+                double probabilidadEsperada = (double) i / 36; // Probabilidad teórica para cada suma
+                double porcentajeReal = (double) resultados[i - 2] / CANTIDAD_SIMULACIONES * 100;
+
+                System.out.println(i + "\t" + resultados[i - 2] + "\t\t" +
+                        String.format("%.4f", probabilidadEsperada) + "\t\t" +
+                        String.format("%.2f%%", porcentajeReal));
+            }
+
+            // Análisis de resultados
+            System.out.println("\nAnálisis de resultados:");
+            boolean resultadosRazonables = true;
+
+            for (int i = 2; i <= 12; i++) {
+                if (Math.abs(resultados[i - 2] - (CANTIDAD_SIMULACIONES / 6)) > CANTIDAD_SIMULACIONES * 0.05) {
+                    resultadosRazonables = false;
+                    System.out.println("La suma " + i + " no se aproxima a la probabilidad esperada (esperado: ~1/6, real: " +
+                            String.format("%.2f%%", (double) resultados[i - 2] / CANTIDAD_SIMULACIONES * 100) + ")");
+                    break;
+                }
+            }
+
+            if (resultadosRazonables) {
+                System.out.println("Los resultados son razonables. Se observa una distribución relativamente uniforme de las sumas, " +
+                        "con una ligera variabilidad aleatoria esperada.");
+            }
         }
     }
 }
-
 
 
 

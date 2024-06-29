@@ -774,8 +774,6 @@ el doble del lado más corto utilizando una función.
                     System.out.println("Opción no válida. Intente de nuevo.");
             }
         } while (opcion != 0);
-
-        sc.close();
     }
 
 
