@@ -1,0 +1,157 @@
+import java.util.Scanner;
+//ejercicio # 117 "En este ejercicio en Java, se define una clase Persona con campos para primerNombre,
+// primerApellido, celular, sexo, peso, estatura, IMC y dx. Se implementan métodos para convertir libras
+// a kilogramos, convertir estatura de centímetros a metros, calcular el IMC y asignar un diagnóstico basado
+// en el IMC. Se crean dos instancias de Persona, se inicializan y se leen los datos de una persona con
+// estatura en centímetros y peso en libras. Se calcula el IMC y se asigna un diagnóstico. Se imprime
+// la información de la primera persona. Luego, se copia la información de la primera persona a la
+// segunda. Si el diagnóstico no es 'Normopeso', se ajusta el IMC a 22.9 y el peso correspondiente,
+// y se imprime una tabla comparativa antes y después de los ajustes."
+class Persona {
+
+    // Atributos de la clase Persona
+    char[] primerNombre = new char[50];
+    char[] primerApellido = new char[50];
+    char[] celular = new char[8];
+    int sexo;
+    double peso;
+    double estatura;
+    double IMC;
+    char dx;
+
+    // Constructor de la clase Persona
+    public Persona(char[] primerNombre, char[] primerApellido, char[] celular, int sexo, double peso, double estatura) {
+        this.primerNombre = primerNombre;
+        this.primerApellido = primerApellido;
+        this.celular = celular;
+        this.sexo = sexo;
+        this.peso = peso;
+        this.estatura = estatura;
+        this.IMC = calcularIMC(convertirLibrasAKilos(peso), convertirCmAMetros(estatura));
+        this.dx = asignarDx(IMC);
+    }
+
+    // Función para convertir libras a kilogramos
+    private double convertirLibrasAKilos(double libras) {
+        return libras * 0.453592;
+    }
+
+    // Función para convertir centímetros a metros
+    private double convertirCmAMetros(double cm) {
+        return cm / 100;
+    }
+
+    // Función para calcular el IMC
+    protected double calcularIMC(double pesoKg, double estaturaMetros) {
+        return pesoKg / (estaturaMetros * estaturaMetros);
+    }
+
+    // Función para asignar el diagnóstico
+    protected char asignarDx(double IMC) {
+        if (IMC < 18.5) {
+            return 'D'; // Bajo peso
+        } else if (IMC < 25) {
+            return 'N'; // Normopeso
+        } else if (IMC < 30) {
+            return 'S'; // Sobrepeso
+        } else {
+            return 'O'; // Obesidad
+        }
+    }
+
+    // Función para imprimir la información de la persona
+    public void imprimirInformacion() {
+        System.out.println("Primer nombre: " + new String(primerNombre));
+        System.out.println("Primer apellido: " + new String(primerApellido));
+        System.out.println("Celular: " + new String(celular));
+        System.out.println("Sexo: " + (sexo == 1 ? "Masculino" : "Femenino"));
+        System.out.println("Peso (kg): " + peso);
+        System.out.println("Estatura (m): " + estatura);
+        System.out.println("IMC: " + IMC);
+        System.out.println("Diagnóstico: " + dx);
+        System.out.println();
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Lectura de datos de la persona 1
+        System.out.println("Ingrese datos de Persona 1:");
+        System.out.print("Primer nombre: ");
+        sc.nextLine(); // Se consume el salto de línea anterior
+        char[] primerNombre1 = sc.nextLine().toCharArray();
+        System.out.print("Primer apellido: ");
+        char[] primerApellido1 = sc.nextLine().toCharArray();
+        System.out.print("Celular: ");
+        char[] celular1 = sc.nextLine().toCharArray();
+        System.out.print("Sexo (1 - Masculino, 2 - Femenino): ");
+        int sexo1 = sc.nextInt();
+        System.out.print("Peso (libras): ");
+        double peso1 = sc.nextDouble();
+        System.out.print("Estatura (cm): ");
+        double estatura1 = sc.nextDouble();
+
+        // Creación de la persona 1
+        Persona persona1 = new Persona(primerNombre1, primerApellido1, celular1, sexo1, peso1, estatura1);
+
+        // Lectura de datos de la persona 2
+        System.out.println("\nIngrese datos de Persona 2:");
+        System.out.print("Primer nombre: ");
+        sc.nextLine(); // Se consume el salto de línea anterior
+        char[] primerNombre2 = sc.nextLine().toCharArray();
+        System.out.print("Primer apellido: ");
+        char[] primerApellido2 = sc.nextLine().toCharArray();
+        System.out.print("Celular: ");
+        char[] celular2 = sc.nextLine().toCharArray();
+        System.out.print("Sexo (1 - Masculino, 2 - Femenino): ");
+        int sexo2 = sc.nextInt();
+        System.out.print("Peso (libras): ");
+        double peso2 = sc.nextDouble();
+        System.out.print("Estatura (cm): ");
+        double estatura2 = sc.nextDouble();
+
+        // Creación de la persona 2
+        Persona persona2 = new Persona(primerNombre2, primerApellido2, celular2, sexo2, peso2, estatura2);
+
+        // Impresión de la información de la persona 1 y persona 2
+        System.out.println("\nInformación de Persona 1:");
+        persona1.imprimirInformacion();
+        System.out.println("Información de Persona 2:");
+        persona2.imprimirInformacion();
+
+        // Comparación y ajustes según diagnóstico de Persona 1
+        if (persona1.dx != 'N') {
+            double nuevoPeso = 22.9 * Math.pow(persona2.estatura / 100, 2); // IMC deseado de 22.9
+            double nuevaEstatura = persona2.estatura / 100; // Convertir estatura a metros
+
+            // Actualizar datos de persona 2
+            persona2.peso = nuevoPeso;
+            persona2.estatura = nuevaEstatura;
+            persona2.IMC = persona2.calcularIMC(nuevoPeso, nuevaEstatura);
+            persona2.dx = persona2.asignarDx(persona2.IMC);
+        }
+
+        // Impresión de tabla comparativa de Persona 1 y Persona 2
+        System.out.println("\nTabla comparativa de Persona 1 y Persona 2:");
+        System.out.println("--------------------------------------------------");
+        System.out.println("Persona 1:");
+        persona1.imprimirInformacion();
+        System.out.println("Persona 2:");
+        persona2.imprimirInformacion();
+        System.out.println("--------------------------------------------------");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
