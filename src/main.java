@@ -55,6 +55,9 @@ public class main {
             case 2:
                 Adrian.MostrandoSello();
                 break;
+            case 3:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                    break;
             case 4:
                 cesar.OperacionesBasicas();
                 break;
@@ -69,6 +72,9 @@ public class main {
                 break;
             case 8:
                 Adrian.OrdenarNumeros();
+                break;
+            case 9:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 10:
                 cesar.Cuadrado();
@@ -85,6 +91,9 @@ public class main {
             case 14:
                 Adrian.TableroDamas();
                 break;
+            case 15:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 16:
                 cesar.SepararDigito();
                 break;
@@ -99,6 +108,9 @@ public class main {
                 break;
             case 20:
                 Adrian.CalculadoraSueldoVendedor();
+                break;
+            case 21:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 22:
                 cesar.NumeroMayorMenu();
@@ -119,6 +131,9 @@ public class main {
                 cesar.Cifrado();
                 cesar.Descifrado();
                 break;
+            case 27:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 29:
                 Fidel.calcularPromedio();
                 break;
@@ -130,6 +145,9 @@ public class main {
                 break;
             case 32:
                 Adrian.Factorial();
+                break;
+            case 33:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 34:
                 cesar.VentaProductos();
@@ -146,6 +164,9 @@ public class main {
             case 38:
                 Adrian.Rombo();
                 break;
+            case 39:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 40:
                 cesar.SeamosPositivos();
                 break;
@@ -160,6 +181,9 @@ public class main {
                 break;
             case 44:
                 Adrian.MenuProgram();
+                break;
+            case 45:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 46:
                 cesar.ValorAbsoluto();
@@ -176,6 +200,9 @@ public class main {
             case 50:
                 Adrian.FiguraV2();
                 break;
+            case 51:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 52:
                 cesar.TrazaTuDestino();
                 break;
@@ -190,6 +217,9 @@ public class main {
                 break;
             case 56:
                 Adrian.AlineaNombre();
+                break;
+            case 57:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 58:
                 cesar.multiplo();
@@ -206,6 +236,9 @@ public class main {
             case 62:
                 Adrian.DisminuyeNum();
                 break;
+            case 63:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 64:
                 cesar.inverso();
                 break;
@@ -221,6 +254,9 @@ public class main {
             case 68:
                 Adrian.MultiplicacionPrimaria();
                 break;
+            case 69:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 70:
                 cesar.InstruccionAsistida();
                 break;
@@ -235,6 +271,9 @@ public class main {
                 break;
             case 74:
                 Adrian.Elevation();
+                break;
+            case 75:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 76:
                 cesar.Alineaésta();
@@ -259,6 +298,9 @@ public class main {
                 break;
             case 86:
                 Adrian.ImpArchivo();
+                break;
+            case 87:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 88:
                 cesar.Trigonometria();
@@ -290,6 +332,9 @@ public class main {
             case 98:
                 Adrian.MatrizV2();
                 break;
+            case 99:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 100:
                 cesar.burbuja();
                 break;
@@ -304,6 +349,9 @@ public class main {
                 break;
             case 104:
                 Adrian.MatrizSentido();
+                break;
+            case 105:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 106:
                 cesar.pollos();
@@ -320,6 +368,9 @@ public class main {
             case 110:
                 Adrian.PhdMatriz();
                 break;
+            case 111:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
+                break;
             case 112:
                 cesar.metereologico();
                 break;
@@ -334,6 +385,9 @@ public class main {
                 break;
             case 116:
                 Hospital.hospital();
+                break;
+            case 117:
+                System.out.println("No se pueden mostrar por que el compañero los hizo pero con errores");
                 break;
             case 118:
                 fiallos.clinica();
