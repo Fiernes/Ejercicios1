@@ -23,7 +23,7 @@ public class main {
        //103 //abner.lanzamientodado(entrada);
        //109 //abner.ejercicio109(entrada);
        //115 //abner.hospital(entrada);
-      //121 //abner.registro(entrada);
+      //121//abner.registro(entrada);
       //103  //abner.lanzardados(entrada);
 
 

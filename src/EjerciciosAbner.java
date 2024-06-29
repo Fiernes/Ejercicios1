@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+@SuppressWarnings("ALL")
 public class EjerciciosAbner {
     private static final int NUM_LANCES = 100;
     private static final int CREDITO_INICIAL = 1000;
@@ -378,99 +379,6 @@ public class EjerciciosAbner {
         return null;
     }
 
-    private static void mostrarExpedientes() {
-    }
-
-    private static void mostrarEstadisticasInternosPorEspecialidad() {
-    }
-
-    private static void internarPaciente() {
-    }
-
-    private static void darAltaPaciente() {
-    }
-
-    // Menú principal
-    private static void mostrarMenu() {
-        System.out.println("\n**Sistema de gestión de expedientes de pacientes**");
-        System.out.println("--------------------------------------------------");
-        System.out.println("1. Agregar expediente");
-        System.out.println("2. Modificar expediente");
-        System.out.println("3. Dar de alta paciente");
-        System.out.println("4. Internarse en el hospital");
-        System.out.println("5. Mostrar estadísticas de pacientes internos por especialidad");
-        System.out.println("6. Mostrar todos los expedientes");
-        System.out.println("0. Salir");
-        System.out.print("Ingrese la opción deseada: ");
-    }
-
-    // Agregar expediente
-    private static <ExpedientePaciente> void agregarExpediente() {
-        // Crear un nuevo objeto ExpedientePaciente
-        ExpedientePaciente expediente = new ExpedientePaciente();
-
-
-        // Solicitar datos al usuario
-        System.out.print("Ingrese el primer nombre: ");
-        expediente.toString();
-
-        System.out.print("Ingrese el primer apellido: ");
-        expediente.toString();
-
-        System.out.print("Ingrese el celular (dígitos solamente): ");
-        expediente.getClass();
-
-        System.out.print("Ingrese el sexo (M/F): ");
-        expediente.toString();
-
-        System.out.print("Ingrese el peso (en kg): ");
-        expediente.toString();
-
-        System.out.print("Ingrese la estatura (en cm): ");
-        expediente.getClass();
-
-        expediente.getClass();
-
-        System.out.print("Ingrese el diagnóstico: ");
-        expediente.toString();
-
-        // Agregar el expediente a la lista
-        expediente.toString();
-
-        System.out.println("\nExpediente agregado exitosamente.");
-    }
-
-    // Modificar expediente
-    private static <ExpedientePaciente> void modificarExpediente() {
-        System.out.print("Ingrese el número de expediente a modificar: ");
-        sc.nextInt();
-
-        ExpedientePaciente expediente = buscarExpediente();
-        if (expediente == null) {
-            System.out.println("Expediente no encontrado.");
-            return;
-        }
-
-        System.out.println("\nDatos actuales del paciente:");
-        mostrarDatosExpediente();
-
-        System.out.print("\n¿Desea modificar alguno de estos datos? (S/N): ");
-        String respuesta = sc.next().toUpperCase();
-        if (!respuesta.equals("S")) {
-            return;
-        }
-
-
-        System.out.print("Ingrese la nueva estatura (en cm) (o presione Enter para no modificar): ");{
-        }
-    }
-
-    private static void mostrarDatosExpediente() {
-    }
-
-    private static <ExpedientePaciente> ExpedientePaciente buscarExpediente() {
-        return null;
-    }
 
     /*
     7. Jugando con tres números: Escriba un programa que reciba tres enteros del teclado e imprima la suma, promedi
@@ -1173,10 +1081,11 @@ especialidades, piso y habitaciones.
     2. Si no está interno entonces puede internarse y agregar para ello especialidad, piso, habitación y cama. Ahora las estadísticas muestran pacientes internos por especialidad.
     
     */
+    public static class ExpedientePaciente {
     public void registro(Scanner entrada) {
         int opcion;
         do {
-             
+
             mostrarmenu();
             opcion = sc.nextInt();
 
@@ -1208,6 +1117,99 @@ especialidades, piso y habitaciones.
         } while (opcion != 0);
     }
 
+    private static void mostrarExpedientes() {
+    }
+
+    private static void mostrarEstadisticasInternosPorEspecialidad() {
+    }
+
+    private static void internarPaciente() {
+    }
+
+    private static void darAltaPaciente() {
+    }
+
+    // Menú principal
+    private static void mostrarMenu() {
+        System.out.println("\n**Sistema de gestión de expedientes de pacientes**");
+        System.out.println("--------------------------------------------------");
+        System.out.println("1. Agregar expediente");
+        System.out.println("2. Modificar expediente");
+        System.out.println("3. Dar de alta paciente");
+        System.out.println("4. Internarse en el hospital");
+        System.out.println("5. Mostrar estadísticas de pacientes internos por especialidad");
+        System.out.println("6. Mostrar todos los expedientes");
+        System.out.println("0. Salir");
+        System.out.print("Ingrese la opción deseada: ");
+    }
+
+    // Agregar expediente
+    private static void agregarExpediente() {
+        // Crear un nuevo objeto ExpedientePaciente
+        ExpedientePaciente expediente = new ExpedientePaciente();
+
+
+        // Solicitar datos al usuario
+        System.out.print("Ingrese el primer nombre: ");
+        expediente.toString();
+
+        System.out.print("Ingrese el primer apellido: ");
+        expediente.toString();
+
+        System.out.print("Ingrese el celular (dígitos solamente): ");
+        expediente.getClass();
+
+        System.out.print("Ingrese el sexo (M/F): ");
+        expediente.toString();
+
+        System.out.print("Ingrese el peso (en kg): ");
+        expediente.toString();
+
+        System.out.print("Ingrese la estatura (en cm): ");
+        expediente.getClass();
+
+        expediente.getClass();
+
+        System.out.print("Ingrese el diagnóstico: ");
+        expediente.toString();
+
+        // Agregar el expediente a la lista
+        expediente.toString();
+
+        System.out.println("\nExpediente agregado exitosamente.");
+    }
+
+    // Modificar expediente
+    private static <ExpedientePaciente> void modificarExpediente() {
+        System.out.print("Ingrese el número de expediente a modificar: ");
+        sc.nextInt();
+
+        ExpedientePaciente expediente = buscarExpediente();
+        if (expediente == null) {
+            System.out.println("Expediente no encontrado.");
+            return;
+        }
+
+        System.out.println("\nDatos actuales del paciente:");
+        mostrarDatosExpediente();
+
+        System.out.print("\n¿Desea modificar alguno de estos datos? (S/N): ");
+        String respuesta = sc.next().toUpperCase();
+        if (!respuesta.equals("S")) {
+            return;
+        }
+
+
+        System.out.print("Ingrese la nueva estatura (en cm) (o presione Enter para no modificar): ");{
+        }
+    }
+
+    private static void mostrarDatosExpediente() {
+    }
+
+    private static <ExpedientePaciente> ExpedientePaciente buscarExpediente() {
+        return null;
+    }
     private void mostrarmenu() {
     }
 
@@ -1259,7 +1261,7 @@ especialidades, piso y habitaciones.
         }
     }
 }
-
+}
 
 
 
