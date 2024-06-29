@@ -13,11 +13,11 @@ public class main {
 
         while (continuar) {
             Fidel.PresionarEnter();
-            System.out.println("Seleccione el número del ejercicio (1-121) o 0 para salir:");
+            System.out.println("Seleccione el número del ejercicio (1-122) o 0 para salir:");
             int seleccion = entrada.nextInt();
             if (seleccion == 0) {
                 continuar = false;
-            } else if (seleccion > 0 && seleccion <= 121) {
+            } else if (seleccion > 0 && seleccion <= 122) {
                 if (seleccion >= 17){
                     menuIdioma(entrada);
                     Fidel.PresionarEnter();
@@ -44,6 +44,7 @@ public class main {
         EjerciciosAdrian Adrian = new EjerciciosAdrian();
         EjercicioCesar cesar = new EjercicioCesar();
         ClinicaNutricion fiallos = new ClinicaNutricion();
+        EjerciciosNataly Nataly = new EjerciciosNataly ();
         HospitalManagement Hospital = new HospitalManagement();
 
         switch (numeroEjercicio) {
@@ -58,7 +59,9 @@ public class main {
                 break;
             case 5:
                 Fidel.encontrarMayor(entrada);
-                Fidel.PresionarEnter();
+                break;
+            case 6:
+                Nataly.Aritmetica();
                 break;
             case 8:
                 Adrian.OrdenarNumeros();
@@ -70,7 +73,7 @@ public class main {
                 Fidel.encontrarExtremos(entrada);
                 break;
             case 12:
-                cesar.metereologico();
+                Nataly.ParesImpares();
                 break;
             case 14:
                 Adrian.TableroDamas();
@@ -81,6 +84,9 @@ public class main {
             case 17:
                 Fidel.mostrarGraficosAsteriscos(entrada);
                 break;
+            case 18:
+                Nataly.Gasolina();
+                break;
             case 20:
                 Adrian.CalculadoraSueldoVendedor();
                 break;
@@ -89,6 +95,9 @@ public class main {
                 break;
             case 23:
                 Fidel.imprimirCuadradoHueco(entrada);
+                break;
+            case 24:
+                Nataly.ApocoHacenUno();
                 break;
             case 26:
                 Adrian.CopiarPegar();
@@ -100,6 +109,9 @@ public class main {
             case 29:
                 Fidel.calcularPromedio();
                 break;
+            case 30:
+                Nataly.NumeroMenor();
+                break;
             case 32:
                 Adrian.Factorial();
                 break;
@@ -108,6 +120,9 @@ public class main {
                 break;
             case 35:
                 Fidel.imprimirTablaConversiones();
+                break;
+            case 36:
+                Nataly.CuentoCincoDruidas();
                 break;
             case 38:
                 Adrian.Rombo();
@@ -118,6 +133,9 @@ public class main {
             case 41:
                 Fidel.imprimirTablaMultiplicacion(entrada);
                 break;
+            case 42:
+                Nataly.Bermudas();
+                break;
             case 44:
                 Adrian.MenuProgram();
                 break;
@@ -126,6 +144,9 @@ public class main {
                 break;
             case 47:
                 Fidel.divideYSuma(entrada);
+                break;
+            case 48:
+                Nataly.DruidasSubenDeNivel();
                 break;
             case 50:
                 Adrian.FiguraV2();
@@ -136,6 +157,9 @@ public class main {
             case 53:
                 Fidel.HaceFrio(entrada);
                 break;
+            case 54:
+                Nataly.ImprimiendoLineas();
+                break;
             case 56:
                 Adrian.AlineaNombre();
                 break;
@@ -144,6 +168,9 @@ public class main {
                 break;
             case 59:
                 Fidel.Alineado(entrada);
+                break;
+            case 60:
+                Nataly.AlineaEsta(entrada);
                 break;
             case 62:
                 Adrian.DisminuyeNum();
@@ -154,6 +181,9 @@ public class main {
             case 65:
                 Fidel.Estacionamiento(entrada);
                 break;
+            case 66:
+                Nataly.PromedioEstudiante();
+                break;
             case 68:
                 Adrian.MultiplicacionPrimaria();
                 break;
@@ -162,6 +192,9 @@ public class main {
                 break;
             case 71:
                 Fidel.TorreHanoi(entrada);
+                break;
+            case 72:
+                Nataly.CirculoNuevo();
                 break;
             case 74:
                 Adrian.Elevation();
@@ -172,6 +205,9 @@ public class main {
             case 77:
                 Fidel.Potenciando(entrada);
                 break;
+            case 78:
+                Nataly.VentaModificada();
+                break;
             case 80:
                 Adrian.MiLibreria();
                 break;
@@ -180,6 +216,9 @@ public class main {
                 break;
             case 83:
                 Fidel.InstrucciónAsistidaComputadora2(entrada);
+                break;
+            case 84:
+                Nataly.AngulosRectos();
                 break;
             case 86:
                 Adrian.ImpArchivo();
@@ -190,6 +229,9 @@ public class main {
             case 89:
                 Fidel.TeLeoVerdad(entrada);
                 break;
+            case 90:
+                Nataly.TeLeoVerdad();
+                break;
             case 92:
                 Adrian.ejercicio91();
                 break;
@@ -198,6 +240,9 @@ public class main {
                 break;
             case 95:
                 Fidel.VectuEliges(entrada);
+                break;
+            case 96:
+                Nataly.Vectores();
                 break;
             case 98:
                 Adrian.MatrizV2();
@@ -208,6 +253,9 @@ public class main {
             case 101:
                 Fidel.OrdenamientoOptimizado(entrada);
                 break;
+            case 102:
+                Nataly.UnaDimension();
+                break;
             case 104:
                 Adrian.MatrizSentido();
                 break;
@@ -217,11 +265,20 @@ public class main {
             case 107:
                 Fidel.Pollos(entrada);
                 break;
+            case 108:
+                Nataly.Matriz5x5();
+                break;
             case 110:
                 Adrian.PhdMatriz();
                 break;
+            case 112:
+                cesar.metereologico();
+                break;
             case 113:
                 Fidel.Grafos(entrada);
+                break;
+            case 114:
+                Nataly.Valles();
                 break;
             case 116:
                 Hospital.hospital();
@@ -232,10 +289,14 @@ public class main {
             case 119:
                 Fidel.Clinica2(entrada);
                 break;
+            case 122:
+                Nataly.SimpleVenta();
+                break;
             default:
                 System.out.println("Ejercicio no implementado.");
                 break;
         }
+
     }
 
     public static void menuIdioma(Scanner entrada) {
