@@ -7,7 +7,7 @@ public class main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
 
-        boolean continuar = true;
+        boolean continuar;
 
         Fidel.Bienvenida();
 
